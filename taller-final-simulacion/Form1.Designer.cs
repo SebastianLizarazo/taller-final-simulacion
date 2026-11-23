@@ -342,7 +342,7 @@ namespace taller_final_simulacion
             tlParametros.ColumnCount = 3;
             tlParametros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
             tlParametros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
-            tlParametros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147F));
+            tlParametros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tlParametros.Controls.Add(lblCabeceraParametro, 0, 0);
             tlParametros.Controls.Add(lblCabeceraValor, 1, 0);
             tlParametros.Controls.Add(lblCabeceraUnidad, 2, 0);
@@ -411,7 +411,7 @@ namespace taller_final_simulacion
             tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             tlParametros.Size = new System.Drawing.Size(490, 665);
             tlParametros.TabIndex = 0;
             // 
@@ -937,7 +937,7 @@ namespace taller_final_simulacion
             lblEscala.Location = new System.Drawing.Point(4, 645);
             lblEscala.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblEscala.Name = "lblEscala";
-            lblEscala.Size = new System.Drawing.Size(206, 20);
+            lblEscala.Size = new System.Drawing.Size(206, 43);
             lblEscala.TabIndex = 45;
             lblEscala.Text = "Escala  (animación)";
             lblEscala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -959,7 +959,7 @@ namespace taller_final_simulacion
             udEscala.Location = new System.Drawing.Point(354, 645);
             udEscala.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udEscala.Name = "udEscala";
-            udEscala.Size = new System.Drawing.Size(139, 20);
+            udEscala.Size = new System.Drawing.Size(139, 43);
             udEscala.TabIndex = 47;
             udEscala.Text = "px/m";
             udEscala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -990,7 +990,7 @@ namespace taller_final_simulacion
             tlAcciones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             tlAcciones.Name = "tlAcciones";
             tlAcciones.RowCount = 4;
-            tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
             tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1003,7 +1003,8 @@ namespace taller_final_simulacion
             flBotones.Controls.Add(btnReproducir);
             flBotones.Controls.Add(btnReiniciar);
             flBotones.Controls.Add(btnRestablecer);
-            flBotones.Dock = System.Windows.Forms.DockStyle.Fill;
+            flBotones.AutoSize = true;
+            flBotones.Dock = System.Windows.Forms.DockStyle.Top;
             flBotones.Location = new System.Drawing.Point(4, 5);
             flBotones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             flBotones.Name = "flBotones";
@@ -1186,9 +1187,9 @@ namespace taller_final_simulacion
             tlEstadoAnimacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             tlEstadoAnimacion.Name = "tlEstadoAnimacion";
             tlEstadoAnimacion.RowCount = 3;
-            tlEstadoAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            tlEstadoAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            tlEstadoAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            tlEstadoAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            tlEstadoAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            tlEstadoAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
             tlEstadoAnimacion.Size = new System.Drawing.Size(715, 110);
             tlEstadoAnimacion.TabIndex = 1;
             // 
@@ -1491,6 +1492,7 @@ namespace taller_final_simulacion
             Name = "Form1";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Simulación de 3 masas, 4 resortes y 3 amortiguadores";
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
             tlRaiz.ResumeLayout(false);
             tlLateral.ResumeLayout(false);
             gbParametros.ResumeLayout(false);
