@@ -1,0 +1,17 @@
+# Normalización de fin de línea entre plataformas
+* text=auto
+
+# Código fuente
+*.cs text diff=csharp
+*.csproj text
+*.slnx text
+*.resx text
+*.xml text
+*.md text
+
+# Recursos binarios
+*.png binary
+*.jpg binary
+*.ico binary
+*.exe binary
+*.dll binary

@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Proyecto WinForms (SDK-style) para la simulación del sistema mecánico
+    de 3 masas, 4 resortes y 3 amortiguadores (3 grados de libertad).
+
+    Framework objetivo: .NET 8 (net8.0-windows) con WinForms habilitado.
+    Paquete de graficado: ScottPlot.WinForms 5.1.x (API "Plot" de ScottPlot 5).
+  -->
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>taller_final_simulacion</RootNamespace>
+    <AssemblyName>taller-final-simulacion</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Product>Taller final - Simulación de 3 masas, 4 resortes y 3 amortiguadores</Product>
+    <AssemblyTitle>Simulación de sistema mecánico de 3 GDL</AssemblyTitle>
+    <Company>Taller final</Company>
+    <NeutralLanguage>es</NeutralLanguage>
+    <!-- Compilación determinista y sin marcas de tiempo en el ensamblado -->
+    <Deterministic>true</Deterministic>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <!-- Evita el aviso CS1591 por miembros públicos sin documentación XML -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <!--
+      NU1701: SkiaSharp.Views.WindowsForms (dependencia transitiva de ScottPlot.WinForms)
+      referencia OpenTK 3.1.0, que sólo publica assets de .NET Framework 2.0.
+      OpenTK se usa únicamente para el control OpenGL opcional de SkiaSharp, que esta
+      aplicación no utiliza (el renderizado de ScottPlot en WinForms va por SkiaSharp).
+      Se silencian los avisos de restore para que la compilación quede limpia.
+    -->
+    <NoWarn>$(NoWarn);NU1701</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      ScottPlot 5 (rama 5.0.x): es la última que mantiene assets NuGet compatibles
+      con el TFM net8.0-windows (windows7.0) sin avisos NU1701.
+      La rama 5.1.x exige SkiaSharp 3.x, cuyo TFM mínimo es net8.0-windows10.0.19041.
+    -->
+    <PackageReference Include="ScottPlot.WinForms" Version="5.0.56" />
+  </ItemGroup>
+
+</Project>
