@@ -412,7 +412,7 @@ namespace taller_final_simulacion
             tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            tlParametros.Size = new System.Drawing.Size(490, 665);
+            tlParametros.Size = new System.Drawing.Size(490, 688);
             tlParametros.TabIndex = 0;
             // 
             // lblCabeceraParametro
@@ -449,7 +449,7 @@ namespace taller_final_simulacion
             lblCabeceraUnidad.Location = new System.Drawing.Point(354, 0);
             lblCabeceraUnidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblCabeceraUnidad.Name = "lblCabeceraUnidad";
-            lblCabeceraUnidad.Size = new System.Drawing.Size(139, 43);
+            lblCabeceraUnidad.Size = new System.Drawing.Size(132, 43);
             lblCabeceraUnidad.TabIndex = 2;
             lblCabeceraUnidad.Text = "Unidad";
             lblCabeceraUnidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -483,7 +483,7 @@ namespace taller_final_simulacion
             udM1.Location = new System.Drawing.Point(354, 43);
             udM1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udM1.Name = "udM1";
-            udM1.Size = new System.Drawing.Size(139, 43);
+            udM1.Size = new System.Drawing.Size(132, 43);
             udM1.TabIndex = 5;
             udM1.Text = "kg";
             udM1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -517,7 +517,7 @@ namespace taller_final_simulacion
             udM2.Location = new System.Drawing.Point(354, 86);
             udM2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udM2.Name = "udM2";
-            udM2.Size = new System.Drawing.Size(139, 43);
+            udM2.Size = new System.Drawing.Size(132, 43);
             udM2.TabIndex = 8;
             udM2.Text = "kg";
             udM2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -551,7 +551,7 @@ namespace taller_final_simulacion
             udM3.Location = new System.Drawing.Point(354, 129);
             udM3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udM3.Name = "udM3";
-            udM3.Size = new System.Drawing.Size(139, 43);
+            udM3.Size = new System.Drawing.Size(132, 43);
             udM3.TabIndex = 11;
             udM3.Text = "kg";
             udM3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -585,7 +585,7 @@ namespace taller_final_simulacion
             udK1.Location = new System.Drawing.Point(354, 172);
             udK1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udK1.Name = "udK1";
-            udK1.Size = new System.Drawing.Size(139, 43);
+            udK1.Size = new System.Drawing.Size(132, 43);
             udK1.TabIndex = 14;
             udK1.Text = "N/m";
             udK1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -619,7 +619,7 @@ namespace taller_final_simulacion
             udK2.Location = new System.Drawing.Point(354, 215);
             udK2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udK2.Name = "udK2";
-            udK2.Size = new System.Drawing.Size(139, 43);
+            udK2.Size = new System.Drawing.Size(132, 43);
             udK2.TabIndex = 17;
             udK2.Text = "N/m";
             udK2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -653,7 +653,7 @@ namespace taller_final_simulacion
             udK3.Location = new System.Drawing.Point(354, 258);
             udK3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udK3.Name = "udK3";
-            udK3.Size = new System.Drawing.Size(139, 43);
+            udK3.Size = new System.Drawing.Size(132, 43);
             udK3.TabIndex = 20;
             udK3.Text = "N/m";
             udK3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -687,7 +687,7 @@ namespace taller_final_simulacion
             udK4.Location = new System.Drawing.Point(354, 301);
             udK4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udK4.Name = "udK4";
-            udK4.Size = new System.Drawing.Size(139, 43);
+            udK4.Size = new System.Drawing.Size(132, 43);
             udK4.TabIndex = 23;
             udK4.Text = "N/m";
             udK4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -721,7 +721,7 @@ namespace taller_final_simulacion
             udB1.Location = new System.Drawing.Point(354, 344);
             udB1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udB1.Name = "udB1";
-            udB1.Size = new System.Drawing.Size(139, 43);
+            udB1.Size = new System.Drawing.Size(132, 43);
             udB1.TabIndex = 26;
             udB1.Text = "N·s/m";
             udB1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -755,7 +755,7 @@ namespace taller_final_simulacion
             udB2.Location = new System.Drawing.Point(354, 387);
             udB2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udB2.Name = "udB2";
-            udB2.Size = new System.Drawing.Size(139, 43);
+            udB2.Size = new System.Drawing.Size(132, 43);
             udB2.TabIndex = 29;
             udB2.Text = "N·s/m";
             udB2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -789,7 +789,7 @@ namespace taller_final_simulacion
             udB3.Location = new System.Drawing.Point(354, 430);
             udB3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udB3.Name = "udB3";
-            udB3.Size = new System.Drawing.Size(139, 43);
+            udB3.Size = new System.Drawing.Size(132, 43);
             udB3.TabIndex = 32;
             udB3.Text = "N·s/m";
             udB3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -823,7 +823,7 @@ namespace taller_final_simulacion
             udAmplitud.Location = new System.Drawing.Point(354, 473);
             udAmplitud.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udAmplitud.Name = "udAmplitud";
-            udAmplitud.Size = new System.Drawing.Size(139, 43);
+            udAmplitud.Size = new System.Drawing.Size(132, 43);
             udAmplitud.TabIndex = 35;
             udAmplitud.Text = "N";
             udAmplitud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -857,7 +857,7 @@ namespace taller_final_simulacion
             udDuracion.Location = new System.Drawing.Point(354, 516);
             udDuracion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udDuracion.Name = "udDuracion";
-            udDuracion.Size = new System.Drawing.Size(139, 43);
+            udDuracion.Size = new System.Drawing.Size(132, 43);
             udDuracion.TabIndex = 38;
             udDuracion.Text = "s";
             udDuracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -891,7 +891,7 @@ namespace taller_final_simulacion
             udTiempo.Location = new System.Drawing.Point(354, 559);
             udTiempo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udTiempo.Name = "udTiempo";
-            udTiempo.Size = new System.Drawing.Size(139, 43);
+            udTiempo.Size = new System.Drawing.Size(132, 43);
             udTiempo.TabIndex = 41;
             udTiempo.Text = "s";
             udTiempo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -925,7 +925,7 @@ namespace taller_final_simulacion
             udMuestras.Location = new System.Drawing.Point(354, 602);
             udMuestras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udMuestras.Name = "udMuestras";
-            udMuestras.Size = new System.Drawing.Size(139, 43);
+            udMuestras.Size = new System.Drawing.Size(132, 43);
             udMuestras.TabIndex = 44;
             udMuestras.Text = "-";
             udMuestras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -959,7 +959,7 @@ namespace taller_final_simulacion
             udEscala.Location = new System.Drawing.Point(354, 645);
             udEscala.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             udEscala.Name = "udEscala";
-            udEscala.Size = new System.Drawing.Size(139, 43);
+            udEscala.Size = new System.Drawing.Size(132, 43);
             udEscala.TabIndex = 47;
             udEscala.Text = "px/m";
             udEscala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -990,7 +990,7 @@ namespace taller_final_simulacion
             tlAcciones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             tlAcciones.Name = "tlAcciones";
             tlAcciones.RowCount = 4;
-            tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -999,16 +999,16 @@ namespace taller_final_simulacion
             // 
             // flBotones
             // 
+            flBotones.AutoSize = true;
             flBotones.Controls.Add(btnSimular);
             flBotones.Controls.Add(btnReproducir);
             flBotones.Controls.Add(btnReiniciar);
             flBotones.Controls.Add(btnRestablecer);
-            flBotones.AutoSize = true;
             flBotones.Dock = System.Windows.Forms.DockStyle.Top;
             flBotones.Location = new System.Drawing.Point(4, 5);
             flBotones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             flBotones.Name = "flBotones";
-            flBotones.Size = new System.Drawing.Size(482, 93);
+            flBotones.Size = new System.Drawing.Size(482, 136);
             flBotones.TabIndex = 0;
             // 
             // btnSimular
@@ -1062,7 +1062,7 @@ namespace taller_final_simulacion
             // progressBarSimulacion
             // 
             progressBarSimulacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            progressBarSimulacion.Location = new System.Drawing.Point(4, 108);
+            progressBarSimulacion.Location = new System.Drawing.Point(4, 151);
             progressBarSimulacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             progressBarSimulacion.Name = "progressBarSimulacion";
             progressBarSimulacion.Size = new System.Drawing.Size(482, 23);
@@ -1071,7 +1071,7 @@ namespace taller_final_simulacion
             // lblProgreso
             // 
             lblProgreso.Dock = System.Windows.Forms.DockStyle.Fill;
-            lblProgreso.Location = new System.Drawing.Point(4, 136);
+            lblProgreso.Location = new System.Drawing.Point(4, 179);
             lblProgreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblProgreso.Name = "lblProgreso";
             lblProgreso.Size = new System.Drawing.Size(482, 33);
@@ -1083,10 +1083,10 @@ namespace taller_final_simulacion
             // 
             lblAviso.Dock = System.Windows.Forms.DockStyle.Fill;
             lblAviso.ForeColor = System.Drawing.Color.FromArgb(192, 0, 0);
-            lblAviso.Location = new System.Drawing.Point(4, 169);
+            lblAviso.Location = new System.Drawing.Point(4, 212);
             lblAviso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblAviso.Name = "lblAviso";
-            lblAviso.Size = new System.Drawing.Size(482, 70);
+            lblAviso.Size = new System.Drawing.Size(482, 27);
             lblAviso.TabIndex = 3;
             // 
             // tlContenido
@@ -1200,7 +1200,7 @@ namespace taller_final_simulacion
             lblTiempoActual.Location = new System.Drawing.Point(4, 0);
             lblTiempoActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblTiempoActual.Name = "lblTiempoActual";
-            lblTiempoActual.Size = new System.Drawing.Size(349, 40);
+            lblTiempoActual.Size = new System.Drawing.Size(349, 36);
             lblTiempoActual.TabIndex = 0;
             lblTiempoActual.Text = "t = --";
             lblTiempoActual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1212,7 +1212,7 @@ namespace taller_final_simulacion
             lblFuerzaActual.Location = new System.Drawing.Point(361, 0);
             lblFuerzaActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblFuerzaActual.Name = "lblFuerzaActual";
-            lblFuerzaActual.Size = new System.Drawing.Size(350, 40);
+            lblFuerzaActual.Size = new System.Drawing.Size(350, 36);
             lblFuerzaActual.TabIndex = 1;
             lblFuerzaActual.Text = "F = --";
             lblFuerzaActual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1221,10 +1221,10 @@ namespace taller_final_simulacion
             // 
             lblY1Actual.AutoSize = true;
             lblY1Actual.Dock = System.Windows.Forms.DockStyle.Fill;
-            lblY1Actual.Location = new System.Drawing.Point(4, 40);
+            lblY1Actual.Location = new System.Drawing.Point(4, 36);
             lblY1Actual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblY1Actual.Name = "lblY1Actual";
-            lblY1Actual.Size = new System.Drawing.Size(349, 40);
+            lblY1Actual.Size = new System.Drawing.Size(349, 36);
             lblY1Actual.TabIndex = 2;
             lblY1Actual.Text = "y1 = --";
             lblY1Actual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1233,10 +1233,10 @@ namespace taller_final_simulacion
             // 
             lblY2Actual.AutoSize = true;
             lblY2Actual.Dock = System.Windows.Forms.DockStyle.Fill;
-            lblY2Actual.Location = new System.Drawing.Point(361, 40);
+            lblY2Actual.Location = new System.Drawing.Point(361, 36);
             lblY2Actual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblY2Actual.Name = "lblY2Actual";
-            lblY2Actual.Size = new System.Drawing.Size(350, 40);
+            lblY2Actual.Size = new System.Drawing.Size(350, 36);
             lblY2Actual.TabIndex = 3;
             lblY2Actual.Text = "y2 = --";
             lblY2Actual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1245,10 +1245,10 @@ namespace taller_final_simulacion
             // 
             lblY3Actual.AutoSize = true;
             lblY3Actual.Dock = System.Windows.Forms.DockStyle.Fill;
-            lblY3Actual.Location = new System.Drawing.Point(4, 80);
+            lblY3Actual.Location = new System.Drawing.Point(4, 72);
             lblY3Actual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblY3Actual.Name = "lblY3Actual";
-            lblY3Actual.Size = new System.Drawing.Size(349, 40);
+            lblY3Actual.Size = new System.Drawing.Size(349, 38);
             lblY3Actual.TabIndex = 4;
             lblY3Actual.Text = "y3 = --";
             lblY3Actual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1258,10 +1258,10 @@ namespace taller_final_simulacion
             lblAvisoEscala.AutoSize = true;
             lblAvisoEscala.Dock = System.Windows.Forms.DockStyle.Fill;
             lblAvisoEscala.ForeColor = System.Drawing.Color.FromArgb(192, 0, 0);
-            lblAvisoEscala.Location = new System.Drawing.Point(361, 80);
+            lblAvisoEscala.Location = new System.Drawing.Point(361, 72);
             lblAvisoEscala.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblAvisoEscala.Name = "lblAvisoEscala";
-            lblAvisoEscala.Size = new System.Drawing.Size(350, 40);
+            lblAvisoEscala.Size = new System.Drawing.Size(350, 38);
             lblAvisoEscala.TabIndex = 5;
             lblAvisoEscala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -1502,6 +1502,7 @@ namespace taller_final_simulacion
             tlParametros.PerformLayout();
             gbAcciones.ResumeLayout(false);
             tlAcciones.ResumeLayout(false);
+            tlAcciones.PerformLayout();
             flBotones.ResumeLayout(false);
             flBotones.PerformLayout();
             tlContenido.ResumeLayout(false);
