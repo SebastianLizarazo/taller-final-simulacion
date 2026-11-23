@@ -50,6 +50,13 @@ namespace taller_final_simulacion
         private ScottPlot.Plottables.Marker? _marcadorY2;
         private ScottPlot.Plottables.Marker? _marcadorY3;
 
+        /// <summary>
+        /// Instante en que arrancó la reproducción actual. Permite avanzar la animación
+        /// en tiempo real: el índice de muestra se deriva del tiempo físico transcurrido
+        /// y no de la cantidad de eventos de temporizador recibidos.
+        /// </summary>
+        private DateTime _inicioReproduccion;
+
         /// <summary>Texto de aviso de escala ya mostrado (evita repintados innecesarios).</summary>
         private string _avisoEscalaActual = string.Empty;
 
@@ -148,6 +155,10 @@ namespace taller_final_simulacion
                     _indiceMuestra = 0;
                 }
 
+                // La reproducción avanza en tiempo real: se ancla el arranque al instante
+                // físico que ya se viene mostrando, para poder reanudar desde ahí.
+                _inicioReproduccion = DateTime.UtcNow - TimeSpan.FromSeconds(_indiceMuestra * _resultado.TimeStep);
+
                 timerAnimacion.Start();
             }
 
@@ -160,6 +171,7 @@ namespace taller_final_simulacion
         {
             timerAnimacion.Stop();
             _indiceMuestra = 0;
+            _inicioReproduccion = DateTime.UtcNow;
             ActualizarEstadoControles();
             ActualizarVistaAnimacion();
         }
@@ -191,15 +203,18 @@ namespace taller_final_simulacion
                 return;
             }
 
+            // El índice se deriva del tiempo real transcurrido y no del número de eventos
+            // recibidos: si un fotograma se retrasa, la animación salta a la muestra que
+            // corresponde en lugar de acumular retraso (y mensajes de temporizador).
+            double segundos = (DateTime.UtcNow - _inicioReproduccion).TotalSeconds;
+            int objetivo = (int)(segundos / _resultado.TimeStep);
+
+            _indiceMuestra = Math.Clamp(objetivo, 0, _resultado.SampleCount - 1);
+
             if (_indiceMuestra >= _resultado.SampleCount - 1)
             {
-                _indiceMuestra = _resultado.SampleCount - 1;
                 timerAnimacion.Stop();
                 ActualizarEstadoControles();
-            }
-            else
-            {
-                _indiceMuestra++;
             }
 
             ActualizarVistaAnimacion();
@@ -463,7 +478,7 @@ namespace taller_final_simulacion
 
             int indice = Math.Clamp(_indiceMuestra, 0, _resultado.SampleCount - 1);
 
-            lblTiempoActual.Text = $"t = {_resultado.Time[indice]:F4} s";
+            lblTiempoActual.Text = $"t = {_resultado.Time[indice]:F4} s  (i = {indice + 1}/{_resultado.SampleCount})";
             lblFuerzaActual.Text = $"F = {_resultado.Force[indice]:F3} N";
             lblY1Actual.Text = $"y1 = {_resultado.Y1[indice]:G6} m";
             lblY2Actual.Text = $"y2 = {_resultado.Y2[indice]:G6} m";
@@ -472,15 +487,31 @@ namespace taller_final_simulacion
             ActualizarMarcadorGrafica(indice);
             panelAnimacion.Invalidate();
 
-            // Fila correspondiente de la tabla de muestras.
-            if (dgvMuestras.RowCount > 0)
+            // La tabla NO se repinta durante la reproducción: repintar el DataGridView
+            // dentro de los TableLayoutPanel del formulario cuesta decenas de milisegundos
+            // y el temporizador no podría seguir el ritmo (se acumularían eventos).
+            // La fila actual se muestra en las etiquetas; el usuario navega la tabla
+            // haciendo clic en una fila (evento CellClick).
+        }
+
+        /// <summary>
+        /// Permite navegar la animación desde la tabla: al hacer clic en una fila,
+        /// la animación salta a ese instante.
+        /// </summary>
+        private void dgvMuestras_CellClick(object? sender, DataGridViewCellEventArgs e)
+        {
+            if (_resultado is null || e.RowIndex < 0 || e.RowIndex >= _resultado.SampleCount)
             {
-                int fila = Math.Clamp(indice, 0, dgvMuestras.RowCount - 1);
-                if (dgvMuestras.FirstDisplayedScrollingRowIndex != fila)
-                {
-                    dgvMuestras.FirstDisplayedScrollingRowIndex = fila;
-                }
+                return;
             }
+
+            _indiceMuestra = e.RowIndex;
+
+            // Se reancla el arranque de la reproducción para que la animación continúe
+            // desde el instante elegido.
+            _inicioReproduccion = DateTime.UtcNow - TimeSpan.FromSeconds(_indiceMuestra * _resultado.TimeStep);
+
+            ActualizarVistaAnimacion();
         }
 
         /// <summary>Vuelve al instante inicial y detiene la reproducción.</summary>
@@ -488,6 +519,7 @@ namespace taller_final_simulacion
         {
             timerAnimacion.Stop();
             _indiceMuestra = 0;
+            _inicioReproduccion = DateTime.UtcNow;
             ActualizarEstadoControles();
             ActualizarVistaAnimacion();
         }

@@ -274,6 +274,8 @@ namespace taller_final_simulacion
             this.tlRaiz.Name = "tlRaiz";
             this.tlRaiz.RowCount = 1;
             this.tlRaiz.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlRaiz.Controls.Add(this.tlLateral, 0, 0);
+            this.tlRaiz.Controls.Add(this.tlContenido, 1, 0);
             this.tlRaiz.Size = new System.Drawing.Size(1400, 861);
             this.tlRaiz.TabIndex = 0;
             //
@@ -1054,6 +1056,7 @@ namespace taller_final_simulacion
             this.dgvMuestras.TabIndex = 0;
             this.dgvMuestras.VirtualMode = true;
             this.dgvMuestras.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvMuestras_CellValueNeeded);
+            this.dgvMuestras.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMuestras_CellClick);
             //
             // Columnas de la tabla de muestras
             //
