@@ -5,7 +5,7 @@
     de 3 masas, 4 resortes y 3 amortiguadores (3 grados de libertad).
 
     Framework objetivo: .NET 8 (net8.0-windows) con WinForms habilitado.
-    Paquete de graficado: ScottPlot.WinForms 5.1.x (API "Plot" de ScottPlot 5).
+    Paquete de graficado: ScottPlot.WinForms 5.0.x (API "Plot" de ScottPlot 5).
   -->
 
   <PropertyGroup>
