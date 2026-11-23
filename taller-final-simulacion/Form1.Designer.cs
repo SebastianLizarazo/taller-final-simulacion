@@ -150,1072 +150,1370 @@ namespace taller_final_simulacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tlRaiz = new System.Windows.Forms.TableLayoutPanel();
-            this.tlLateral = new System.Windows.Forms.TableLayoutPanel();
-            this.gbParametros = new System.Windows.Forms.GroupBox();
-            this.panelParametros = new System.Windows.Forms.Panel();
-            this.tlParametros = new System.Windows.Forms.TableLayoutPanel();
-            this.lblCabeceraParametro = new System.Windows.Forms.Label();
-            this.lblCabeceraValor = new System.Windows.Forms.Label();
-            this.lblCabeceraUnidad = new System.Windows.Forms.Label();
-            this.lblM1 = new System.Windows.Forms.Label();
-            this.txtM1 = new System.Windows.Forms.TextBox();
-            this.udM1 = new System.Windows.Forms.Label();
-            this.lblM2 = new System.Windows.Forms.Label();
-            this.txtM2 = new System.Windows.Forms.TextBox();
-            this.udM2 = new System.Windows.Forms.Label();
-            this.lblM3 = new System.Windows.Forms.Label();
-            this.txtM3 = new System.Windows.Forms.TextBox();
-            this.udM3 = new System.Windows.Forms.Label();
-            this.lblK1 = new System.Windows.Forms.Label();
-            this.txtK1 = new System.Windows.Forms.TextBox();
-            this.udK1 = new System.Windows.Forms.Label();
-            this.lblK2 = new System.Windows.Forms.Label();
-            this.txtK2 = new System.Windows.Forms.TextBox();
-            this.udK2 = new System.Windows.Forms.Label();
-            this.lblK3 = new System.Windows.Forms.Label();
-            this.txtK3 = new System.Windows.Forms.TextBox();
-            this.udK3 = new System.Windows.Forms.Label();
-            this.lblK4 = new System.Windows.Forms.Label();
-            this.txtK4 = new System.Windows.Forms.TextBox();
-            this.udK4 = new System.Windows.Forms.Label();
-            this.lblB1 = new System.Windows.Forms.Label();
-            this.txtB1 = new System.Windows.Forms.TextBox();
-            this.udB1 = new System.Windows.Forms.Label();
-            this.lblB2 = new System.Windows.Forms.Label();
-            this.txtB2 = new System.Windows.Forms.TextBox();
-            this.udB2 = new System.Windows.Forms.Label();
-            this.lblB3 = new System.Windows.Forms.Label();
-            this.txtB3 = new System.Windows.Forms.TextBox();
-            this.udB3 = new System.Windows.Forms.Label();
-            this.lblAmplitud = new System.Windows.Forms.Label();
-            this.txtAmplitud = new System.Windows.Forms.TextBox();
-            this.udAmplitud = new System.Windows.Forms.Label();
-            this.lblDuracion = new System.Windows.Forms.Label();
-            this.txtDuracion = new System.Windows.Forms.TextBox();
-            this.udDuracion = new System.Windows.Forms.Label();
-            this.lblTiempo = new System.Windows.Forms.Label();
-            this.txtTiempo = new System.Windows.Forms.TextBox();
-            this.udTiempo = new System.Windows.Forms.Label();
-            this.lblMuestras = new System.Windows.Forms.Label();
-            this.txtMuestras = new System.Windows.Forms.TextBox();
-            this.udMuestras = new System.Windows.Forms.Label();
-            this.lblEscala = new System.Windows.Forms.Label();
-            this.txtEscala = new System.Windows.Forms.TextBox();
-            this.udEscala = new System.Windows.Forms.Label();
-            this.gbAcciones = new System.Windows.Forms.GroupBox();
-            this.tlAcciones = new System.Windows.Forms.TableLayoutPanel();
-            this.flBotones = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSimular = new System.Windows.Forms.Button();
-            this.btnReproducir = new System.Windows.Forms.Button();
-            this.btnReiniciar = new System.Windows.Forms.Button();
-            this.btnRestablecer = new System.Windows.Forms.Button();
-            this.progressBarSimulacion = new System.Windows.Forms.ProgressBar();
-            this.lblProgreso = new System.Windows.Forms.Label();
-            this.lblAviso = new System.Windows.Forms.Label();
-            this.tlContenido = new System.Windows.Forms.TableLayoutPanel();
-            this.gbGrafica = new System.Windows.Forms.GroupBox();
-            this.graficaPlot = new ScottPlot.WinForms.FormsPlot();
-            this.gbAnimacion = new System.Windows.Forms.GroupBox();
-            this.tlAnimacion = new System.Windows.Forms.TableLayoutPanel();
-            this.panelAnimacion = new Controles.PanelDobleBuffer();
-            this.tlEstadoAnimacion = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTiempoActual = new System.Windows.Forms.Label();
-            this.lblFuerzaActual = new System.Windows.Forms.Label();
-            this.lblY1Actual = new System.Windows.Forms.Label();
-            this.lblY2Actual = new System.Windows.Forms.Label();
-            this.lblY3Actual = new System.Windows.Forms.Label();
-            this.lblAvisoEscala = new System.Windows.Forms.Label();
-            this.gbMuestras = new System.Windows.Forms.GroupBox();
-            this.dgvMuestras = new System.Windows.Forms.DataGridView();
-            this.colIndice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFuerza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colY1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colY2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colY3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gbAnalisis = new System.Windows.Forms.GroupBox();
-            this.dgvAnalisis = new System.Windows.Forms.DataGridView();
-            this.colMasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaximo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTiempoMaximo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTiempoMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaximoAbsoluto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTiempoMaximoAbsoluto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timerAnimacion = new System.Windows.Forms.Timer(this.components);
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tlRaiz.SuspendLayout();
-            this.tlLateral.SuspendLayout();
-            this.gbParametros.SuspendLayout();
-            this.tlParametros.SuspendLayout();
-            this.gbAcciones.SuspendLayout();
-            this.tlAcciones.SuspendLayout();
-            this.flBotones.SuspendLayout();
-            this.tlContenido.SuspendLayout();
-            this.gbGrafica.SuspendLayout();
-            this.gbAnimacion.SuspendLayout();
-            this.tlAnimacion.SuspendLayout();
-            this.tlEstadoAnimacion.SuspendLayout();
-            this.gbMuestras.SuspendLayout();
-            this.dgvMuestras.SuspendLayout();
-            this.gbAnalisis.SuspendLayout();
-            this.dgvAnalisis.SuspendLayout();
-            this.SuspendLayout();
-            //
+            components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            tlRaiz = new System.Windows.Forms.TableLayoutPanel();
+            tlLateral = new System.Windows.Forms.TableLayoutPanel();
+            gbParametros = new System.Windows.Forms.GroupBox();
+            panelParametros = new System.Windows.Forms.Panel();
+            tlParametros = new System.Windows.Forms.TableLayoutPanel();
+            lblCabeceraParametro = new System.Windows.Forms.Label();
+            lblCabeceraValor = new System.Windows.Forms.Label();
+            lblCabeceraUnidad = new System.Windows.Forms.Label();
+            lblM1 = new System.Windows.Forms.Label();
+            txtM1 = new System.Windows.Forms.TextBox();
+            udM1 = new System.Windows.Forms.Label();
+            lblM2 = new System.Windows.Forms.Label();
+            txtM2 = new System.Windows.Forms.TextBox();
+            udM2 = new System.Windows.Forms.Label();
+            lblM3 = new System.Windows.Forms.Label();
+            txtM3 = new System.Windows.Forms.TextBox();
+            udM3 = new System.Windows.Forms.Label();
+            lblK1 = new System.Windows.Forms.Label();
+            txtK1 = new System.Windows.Forms.TextBox();
+            udK1 = new System.Windows.Forms.Label();
+            lblK2 = new System.Windows.Forms.Label();
+            txtK2 = new System.Windows.Forms.TextBox();
+            udK2 = new System.Windows.Forms.Label();
+            lblK3 = new System.Windows.Forms.Label();
+            txtK3 = new System.Windows.Forms.TextBox();
+            udK3 = new System.Windows.Forms.Label();
+            lblK4 = new System.Windows.Forms.Label();
+            txtK4 = new System.Windows.Forms.TextBox();
+            udK4 = new System.Windows.Forms.Label();
+            lblB1 = new System.Windows.Forms.Label();
+            txtB1 = new System.Windows.Forms.TextBox();
+            udB1 = new System.Windows.Forms.Label();
+            lblB2 = new System.Windows.Forms.Label();
+            txtB2 = new System.Windows.Forms.TextBox();
+            udB2 = new System.Windows.Forms.Label();
+            lblB3 = new System.Windows.Forms.Label();
+            txtB3 = new System.Windows.Forms.TextBox();
+            udB3 = new System.Windows.Forms.Label();
+            lblAmplitud = new System.Windows.Forms.Label();
+            txtAmplitud = new System.Windows.Forms.TextBox();
+            udAmplitud = new System.Windows.Forms.Label();
+            lblDuracion = new System.Windows.Forms.Label();
+            txtDuracion = new System.Windows.Forms.TextBox();
+            udDuracion = new System.Windows.Forms.Label();
+            lblTiempo = new System.Windows.Forms.Label();
+            txtTiempo = new System.Windows.Forms.TextBox();
+            udTiempo = new System.Windows.Forms.Label();
+            lblMuestras = new System.Windows.Forms.Label();
+            txtMuestras = new System.Windows.Forms.TextBox();
+            udMuestras = new System.Windows.Forms.Label();
+            lblEscala = new System.Windows.Forms.Label();
+            txtEscala = new System.Windows.Forms.TextBox();
+            udEscala = new System.Windows.Forms.Label();
+            gbAcciones = new System.Windows.Forms.GroupBox();
+            tlAcciones = new System.Windows.Forms.TableLayoutPanel();
+            flBotones = new System.Windows.Forms.FlowLayoutPanel();
+            btnSimular = new System.Windows.Forms.Button();
+            btnReproducir = new System.Windows.Forms.Button();
+            btnReiniciar = new System.Windows.Forms.Button();
+            btnRestablecer = new System.Windows.Forms.Button();
+            progressBarSimulacion = new System.Windows.Forms.ProgressBar();
+            lblProgreso = new System.Windows.Forms.Label();
+            lblAviso = new System.Windows.Forms.Label();
+            tlContenido = new System.Windows.Forms.TableLayoutPanel();
+            gbGrafica = new System.Windows.Forms.GroupBox();
+            graficaPlot = new ScottPlot.WinForms.FormsPlot();
+            gbAnimacion = new System.Windows.Forms.GroupBox();
+            tlAnimacion = new System.Windows.Forms.TableLayoutPanel();
+            panelAnimacion = new taller_final_simulacion.Controles.PanelDobleBuffer();
+            tlEstadoAnimacion = new System.Windows.Forms.TableLayoutPanel();
+            lblTiempoActual = new System.Windows.Forms.Label();
+            lblFuerzaActual = new System.Windows.Forms.Label();
+            lblY1Actual = new System.Windows.Forms.Label();
+            lblY2Actual = new System.Windows.Forms.Label();
+            lblY3Actual = new System.Windows.Forms.Label();
+            lblAvisoEscala = new System.Windows.Forms.Label();
+            gbMuestras = new System.Windows.Forms.GroupBox();
+            dgvMuestras = new System.Windows.Forms.DataGridView();
+            colIndice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colTiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colFuerza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colY1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colY2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colY3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            gbAnalisis = new System.Windows.Forms.GroupBox();
+            dgvAnalisis = new System.Windows.Forms.DataGridView();
+            colMasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colMaximo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colTiempoMaximo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colTiempoMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colMaximoAbsoluto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colTiempoMaximoAbsoluto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            timerAnimacion = new System.Windows.Forms.Timer(components);
+            errorProvider = new System.Windows.Forms.ErrorProvider(components);
+            tlRaiz.SuspendLayout();
+            tlLateral.SuspendLayout();
+            gbParametros.SuspendLayout();
+            panelParametros.SuspendLayout();
+            tlParametros.SuspendLayout();
+            gbAcciones.SuspendLayout();
+            tlAcciones.SuspendLayout();
+            flBotones.SuspendLayout();
+            tlContenido.SuspendLayout();
+            gbGrafica.SuspendLayout();
+            gbAnimacion.SuspendLayout();
+            tlAnimacion.SuspendLayout();
+            tlEstadoAnimacion.SuspendLayout();
+            gbMuestras.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMuestras).BeginInit();
+            gbAnalisis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvAnalisis).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            SuspendLayout();
+            // 
             // tlRaiz
-            //
-            this.tlRaiz.ColumnCount = 2;
-            this.tlRaiz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 360F));
-            this.tlRaiz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlRaiz.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlRaiz.Location = new System.Drawing.Point(0, 0);
-            this.tlRaiz.Name = "tlRaiz";
-            this.tlRaiz.RowCount = 1;
-            this.tlRaiz.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlRaiz.Controls.Add(this.tlLateral, 0, 0);
-            this.tlRaiz.Controls.Add(this.tlContenido, 1, 0);
-            this.tlRaiz.Size = new System.Drawing.Size(1400, 861);
-            this.tlRaiz.TabIndex = 0;
-            //
+            // 
+            tlRaiz.ColumnCount = 2;
+            tlRaiz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 514F));
+            tlRaiz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlRaiz.Controls.Add(tlLateral, 0, 0);
+            tlRaiz.Controls.Add(tlContenido, 1, 0);
+            tlRaiz.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlRaiz.Location = new System.Drawing.Point(0, 0);
+            tlRaiz.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tlRaiz.Name = "tlRaiz";
+            tlRaiz.RowCount = 1;
+            tlRaiz.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlRaiz.Size = new System.Drawing.Size(2000, 1435);
+            tlRaiz.TabIndex = 0;
+            // 
             // tlLateral
-            //
-            this.tlLateral.ColumnCount = 1;
-            this.tlLateral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlLateral.Controls.Add(this.gbParametros, 0, 0);
-            this.tlLateral.Controls.Add(this.gbAcciones, 0, 1);
-            this.tlLateral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlLateral.Location = new System.Drawing.Point(0, 0);
-            this.tlLateral.Name = "tlLateral";
-            this.tlLateral.RowCount = 2;
-            this.tlLateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlLateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tlLateral.Size = new System.Drawing.Size(360, 861);
-            this.tlLateral.TabIndex = 1;
-            //
+            // 
+            tlLateral.ColumnCount = 1;
+            tlLateral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlLateral.Controls.Add(gbParametros, 0, 0);
+            tlLateral.Controls.Add(gbAcciones, 0, 1);
+            tlLateral.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlLateral.Location = new System.Drawing.Point(4, 5);
+            tlLateral.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tlLateral.Name = "tlLateral";
+            tlLateral.RowCount = 2;
+            tlLateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlLateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 283F));
+            tlLateral.Size = new System.Drawing.Size(506, 1425);
+            tlLateral.TabIndex = 1;
+            // 
             // gbParametros
-            //
-            this.gbParametros.Controls.Add(this.panelParametros);
-            this.gbParametros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbParametros.Location = new System.Drawing.Point(3, 3);
-            this.gbParametros.Name = "gbParametros";
-            this.gbParametros.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.gbParametros.Size = new System.Drawing.Size(354, 685);
-            this.gbParametros.TabIndex = 0;
-            this.gbParametros.TabStop = false;
-            this.gbParametros.Text = "Parámetros del sistema";
-            //
-            // panelParametros (contenedor con desplazamiento vertical)
-            //
-            this.panelParametros.AutoScroll = true;
-            this.panelParametros.Controls.Add(this.tlParametros);
-            this.panelParametros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelParametros.Location = new System.Drawing.Point(6, 17);
-            this.panelParametros.Name = "panelParametros";
-            this.panelParametros.Size = new System.Drawing.Size(346, 657);
-            this.panelParametros.TabIndex = 0;
-            //
+            // 
+            gbParametros.Controls.Add(panelParametros);
+            gbParametros.Dock = System.Windows.Forms.DockStyle.Fill;
+            gbParametros.Location = new System.Drawing.Point(4, 5);
+            gbParametros.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbParametros.Name = "gbParametros";
+            gbParametros.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbParametros.Size = new System.Drawing.Size(498, 1132);
+            gbParametros.TabIndex = 0;
+            gbParametros.TabStop = false;
+            gbParametros.Text = "Parámetros del sistema";
+            // 
+            // panelParametros
+            // 
+            panelParametros.AutoScroll = true;
+            panelParametros.Controls.Add(tlParametros);
+            panelParametros.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelParametros.Location = new System.Drawing.Point(4, 29);
+            panelParametros.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            panelParametros.Name = "panelParametros";
+            panelParametros.Size = new System.Drawing.Size(490, 1098);
+            panelParametros.TabIndex = 0;
+            // 
             // tlParametros
-            //
-            this.tlParametros.AutoSize = true;
-            this.tlParametros.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tlParametros.ColumnCount = 3;
-            this.tlParametros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tlParametros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
-            this.tlParametros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tlParametros.Controls.Add(this.lblCabeceraParametro, 0, 0);
-            this.tlParametros.Controls.Add(this.lblCabeceraValor, 1, 0);
-            this.tlParametros.Controls.Add(this.lblCabeceraUnidad, 2, 0);
-            this.tlParametros.Controls.Add(this.lblM1, 0, 1);
-            this.tlParametros.Controls.Add(this.txtM1, 1, 1);
-            this.tlParametros.Controls.Add(this.udM1, 2, 1);
-            this.tlParametros.Controls.Add(this.lblM2, 0, 2);
-            this.tlParametros.Controls.Add(this.txtM2, 1, 2);
-            this.tlParametros.Controls.Add(this.udM2, 2, 2);
-            this.tlParametros.Controls.Add(this.lblM3, 0, 3);
-            this.tlParametros.Controls.Add(this.txtM3, 1, 3);
-            this.tlParametros.Controls.Add(this.udM3, 2, 3);
-            this.tlParametros.Controls.Add(this.lblK1, 0, 4);
-            this.tlParametros.Controls.Add(this.txtK1, 1, 4);
-            this.tlParametros.Controls.Add(this.udK1, 2, 4);
-            this.tlParametros.Controls.Add(this.lblK2, 0, 5);
-            this.tlParametros.Controls.Add(this.txtK2, 1, 5);
-            this.tlParametros.Controls.Add(this.udK2, 2, 5);
-            this.tlParametros.Controls.Add(this.lblK3, 0, 6);
-            this.tlParametros.Controls.Add(this.txtK3, 1, 6);
-            this.tlParametros.Controls.Add(this.udK3, 2, 6);
-            this.tlParametros.Controls.Add(this.lblK4, 0, 7);
-            this.tlParametros.Controls.Add(this.txtK4, 1, 7);
-            this.tlParametros.Controls.Add(this.udK4, 2, 7);
-            this.tlParametros.Controls.Add(this.lblB1, 0, 8);
-            this.tlParametros.Controls.Add(this.txtB1, 1, 8);
-            this.tlParametros.Controls.Add(this.udB1, 2, 8);
-            this.tlParametros.Controls.Add(this.lblB2, 0, 9);
-            this.tlParametros.Controls.Add(this.txtB2, 1, 9);
-            this.tlParametros.Controls.Add(this.udB2, 2, 9);
-            this.tlParametros.Controls.Add(this.lblB3, 0, 10);
-            this.tlParametros.Controls.Add(this.txtB3, 1, 10);
-            this.tlParametros.Controls.Add(this.udB3, 2, 10);
-            this.tlParametros.Controls.Add(this.lblAmplitud, 0, 11);
-            this.tlParametros.Controls.Add(this.txtAmplitud, 1, 11);
-            this.tlParametros.Controls.Add(this.udAmplitud, 2, 11);
-            this.tlParametros.Controls.Add(this.lblDuracion, 0, 12);
-            this.tlParametros.Controls.Add(this.txtDuracion, 1, 12);
-            this.tlParametros.Controls.Add(this.udDuracion, 2, 12);
-            this.tlParametros.Controls.Add(this.lblTiempo, 0, 13);
-            this.tlParametros.Controls.Add(this.txtTiempo, 1, 13);
-            this.tlParametros.Controls.Add(this.udTiempo, 2, 13);
-            this.tlParametros.Controls.Add(this.lblMuestras, 0, 14);
-            this.tlParametros.Controls.Add(this.txtMuestras, 1, 14);
-            this.tlParametros.Controls.Add(this.udMuestras, 2, 14);
-            this.tlParametros.Controls.Add(this.lblEscala, 0, 15);
-            this.tlParametros.Controls.Add(this.txtEscala, 1, 15);
-            this.tlParametros.Controls.Add(this.udEscala, 2, 15);
-            this.tlParametros.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlParametros.Location = new System.Drawing.Point(3, 17);
-            this.tlParametros.Name = "tlParametros";
-            this.tlParametros.RowCount = 16;
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlParametros.Size = new System.Drawing.Size(340, 416);
-            this.tlParametros.TabIndex = 0;
-            //
-            // Cabeceras de la tabla de parámetros
-            //
-            this.lblCabeceraParametro.AutoSize = true;
-            this.lblCabeceraParametro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCabeceraParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCabeceraParametro.Location = new System.Drawing.Point(3, 0);
-            this.lblCabeceraParametro.Name = "lblCabeceraParametro";
-            this.lblCabeceraParametro.Size = new System.Drawing.Size(144, 26);
-            this.lblCabeceraParametro.TabIndex = 0;
-            this.lblCabeceraParametro.Text = "Parámetro";
-            this.lblCabeceraParametro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCabeceraValor.AutoSize = true;
-            this.lblCabeceraValor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCabeceraValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCabeceraValor.Location = new System.Drawing.Point(153, 0);
-            this.lblCabeceraValor.Name = "lblCabeceraValor";
-            this.lblCabeceraValor.Size = new System.Drawing.Size(89, 26);
-            this.lblCabeceraValor.TabIndex = 1;
-            this.lblCabeceraValor.Text = "Valor";
-            this.lblCabeceraValor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCabeceraUnidad.AutoSize = true;
-            this.lblCabeceraUnidad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCabeceraUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCabeceraUnidad.Location = new System.Drawing.Point(248, 0);
-            this.lblCabeceraUnidad.Name = "lblCabeceraUnidad";
-            this.lblCabeceraUnidad.Size = new System.Drawing.Size(74, 26);
-            this.lblCabeceraUnidad.TabIndex = 2;
-            this.lblCabeceraUnidad.Text = "Unidad";
-            this.lblCabeceraUnidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            //
-            // Etiquetas y campos de los parámetros
-            //
-            this.lblM1.AutoSize = true;
-            this.lblM1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblM1.Location = new System.Drawing.Point(3, 26);
-            this.lblM1.Name = "lblM1";
-            this.lblM1.Size = new System.Drawing.Size(144, 26);
-            this.lblM1.TabIndex = 3;
-            this.lblM1.Text = "m1  (masa)";
-            this.lblM1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtM1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtM1.Location = new System.Drawing.Point(153, 29);
-            this.txtM1.Name = "txtM1";
-            this.txtM1.Size = new System.Drawing.Size(89, 20);
-            this.txtM1.TabIndex = 4;
-            this.txtM1.Text = "1";
-            this.udM1.AutoSize = true;
-            this.udM1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udM1.Location = new System.Drawing.Point(248, 26);
-            this.udM1.Name = "udM1";
-            this.udM1.Size = new System.Drawing.Size(74, 26);
-            this.udM1.TabIndex = 5;
-            this.udM1.Text = "kg";
-            this.udM1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblM2.AutoSize = true;
-            this.lblM2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblM2.Location = new System.Drawing.Point(3, 52);
-            this.lblM2.Name = "lblM2";
-            this.lblM2.Size = new System.Drawing.Size(144, 26);
-            this.lblM2.TabIndex = 6;
-            this.lblM2.Text = "m2  (masa)";
-            this.lblM2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtM2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtM2.Location = new System.Drawing.Point(153, 55);
-            this.txtM2.Name = "txtM2";
-            this.txtM2.Size = new System.Drawing.Size(89, 20);
-            this.txtM2.TabIndex = 7;
-            this.txtM2.Text = "1";
-            this.udM2.AutoSize = true;
-            this.udM2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udM2.Location = new System.Drawing.Point(248, 52);
-            this.udM2.Name = "udM2";
-            this.udM2.Size = new System.Drawing.Size(74, 26);
-            this.udM2.TabIndex = 8;
-            this.udM2.Text = "kg";
-            this.udM2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblM3.AutoSize = true;
-            this.lblM3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblM3.Location = new System.Drawing.Point(3, 78);
-            this.lblM3.Name = "lblM3";
-            this.lblM3.Size = new System.Drawing.Size(144, 26);
-            this.lblM3.TabIndex = 9;
-            this.lblM3.Text = "m3  (masa)";
-            this.lblM3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtM3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtM3.Location = new System.Drawing.Point(153, 81);
-            this.txtM3.Name = "txtM3";
-            this.txtM3.Size = new System.Drawing.Size(89, 20);
-            this.txtM3.TabIndex = 10;
-            this.txtM3.Text = "1,5";
-            this.udM3.AutoSize = true;
-            this.udM3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udM3.Location = new System.Drawing.Point(248, 78);
-            this.udM3.Name = "udM3";
-            this.udM3.Size = new System.Drawing.Size(74, 26);
-            this.udM3.TabIndex = 11;
-            this.udM3.Text = "kg";
-            this.udM3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblK1.AutoSize = true;
-            this.lblK1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblK1.Location = new System.Drawing.Point(3, 104);
-            this.lblK1.Name = "lblK1";
-            this.lblK1.Size = new System.Drawing.Size(144, 26);
-            this.lblK1.TabIndex = 12;
-            this.lblK1.Text = "k1  (resorte sup.-m1)";
-            this.lblK1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtK1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtK1.Location = new System.Drawing.Point(153, 107);
-            this.txtK1.Name = "txtK1";
-            this.txtK1.Size = new System.Drawing.Size(89, 20);
-            this.txtK1.TabIndex = 13;
-            this.txtK1.Text = "120";
-            this.udK1.AutoSize = true;
-            this.udK1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udK1.Location = new System.Drawing.Point(248, 104);
-            this.udK1.Name = "udK1";
-            this.udK1.Size = new System.Drawing.Size(74, 26);
-            this.udK1.TabIndex = 14;
-            this.udK1.Text = "N/m";
-            this.udK1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblK2.AutoSize = true;
-            this.lblK2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblK2.Location = new System.Drawing.Point(3, 130);
-            this.lblK2.Name = "lblK2";
-            this.lblK2.Size = new System.Drawing.Size(144, 26);
-            this.lblK2.TabIndex = 15;
-            this.lblK2.Text = "k2  (resorte m1-m3)";
-            this.lblK2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtK2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtK2.Location = new System.Drawing.Point(153, 133);
-            this.txtK2.Name = "txtK2";
-            this.txtK2.Size = new System.Drawing.Size(89, 20);
-            this.txtK2.TabIndex = 16;
-            this.txtK2.Text = "80";
-            this.udK2.AutoSize = true;
-            this.udK2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udK2.Location = new System.Drawing.Point(248, 130);
-            this.udK2.Name = "udK2";
-            this.udK2.Size = new System.Drawing.Size(74, 26);
-            this.udK2.TabIndex = 17;
-            this.udK2.Text = "N/m";
-            this.udK2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblK3.AutoSize = true;
-            this.lblK3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblK3.Location = new System.Drawing.Point(3, 156);
-            this.lblK3.Name = "lblK3";
-            this.lblK3.Size = new System.Drawing.Size(144, 26);
-            this.lblK3.TabIndex = 18;
-            this.lblK3.Text = "k3  (resorte m3-sup.inf.)";
-            this.lblK3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtK3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtK3.Location = new System.Drawing.Point(153, 159);
-            this.txtK3.Name = "txtK3";
-            this.txtK3.Size = new System.Drawing.Size(89, 20);
-            this.txtK3.TabIndex = 19;
-            this.txtK3.Text = "100";
-            this.udK3.AutoSize = true;
-            this.udK3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udK3.Location = new System.Drawing.Point(248, 156);
-            this.udK3.Name = "udK3";
-            this.udK3.Size = new System.Drawing.Size(74, 26);
-            this.udK3.TabIndex = 20;
-            this.udK3.Text = "N/m";
-            this.udK3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblK4.AutoSize = true;
-            this.lblK4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblK4.Location = new System.Drawing.Point(3, 182);
-            this.lblK4.Name = "lblK4";
-            this.lblK4.Size = new System.Drawing.Size(144, 26);
-            this.lblK4.TabIndex = 21;
-            this.lblK4.Text = "k4  (resorte sup.-m2)";
-            this.lblK4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtK4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtK4.Location = new System.Drawing.Point(153, 185);
-            this.txtK4.Name = "txtK4";
-            this.txtK4.Size = new System.Drawing.Size(89, 20);
-            this.txtK4.TabIndex = 22;
-            this.txtK4.Text = "90";
-            this.udK4.AutoSize = true;
-            this.udK4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udK4.Location = new System.Drawing.Point(248, 182);
-            this.udK4.Name = "udK4";
-            this.udK4.Size = new System.Drawing.Size(74, 26);
-            this.udK4.TabIndex = 23;
-            this.udK4.Text = "N/m";
-            this.udK4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblB1.AutoSize = true;
-            this.lblB1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblB1.Location = new System.Drawing.Point(3, 208);
-            this.lblB1.Name = "lblB1";
-            this.lblB1.Size = new System.Drawing.Size(144, 26);
-            this.lblB1.TabIndex = 24;
-            this.lblB1.Text = "b1  (amort. sup.-m1)";
-            this.lblB1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtB1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtB1.Location = new System.Drawing.Point(153, 211);
-            this.txtB1.Name = "txtB1";
-            this.txtB1.Size = new System.Drawing.Size(89, 20);
-            this.txtB1.TabIndex = 25;
-            this.txtB1.Text = "2";
-            this.udB1.AutoSize = true;
-            this.udB1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udB1.Location = new System.Drawing.Point(248, 208);
-            this.udB1.Name = "udB1";
-            this.udB1.Size = new System.Drawing.Size(74, 26);
-            this.udB1.TabIndex = 26;
-            this.udB1.Text = "N·s/m";
-            this.udB1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblB2.AutoSize = true;
-            this.lblB2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblB2.Location = new System.Drawing.Point(3, 234);
-            this.lblB2.Name = "lblB2";
-            this.lblB2.Size = new System.Drawing.Size(144, 26);
-            this.lblB2.TabIndex = 27;
-            this.lblB2.Text = "b2  (amort. sup.-m2)";
-            this.lblB2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtB2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtB2.Location = new System.Drawing.Point(153, 237);
-            this.txtB2.Name = "txtB2";
-            this.txtB2.Size = new System.Drawing.Size(89, 20);
-            this.txtB2.TabIndex = 28;
-            this.txtB2.Text = "1,5";
-            this.udB2.AutoSize = true;
-            this.udB2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udB2.Location = new System.Drawing.Point(248, 234);
-            this.udB2.Name = "udB2";
-            this.udB2.Size = new System.Drawing.Size(74, 26);
-            this.udB2.TabIndex = 29;
-            this.udB2.Text = "N·s/m";
-            this.udB2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblB3.AutoSize = true;
-            this.lblB3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblB3.Location = new System.Drawing.Point(3, 260);
-            this.lblB3.Name = "lblB3";
-            this.lblB3.Size = new System.Drawing.Size(144, 26);
-            this.lblB3.TabIndex = 30;
-            this.lblB3.Text = "b3  (amort. m2-m3)";
-            this.lblB3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtB3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtB3.Location = new System.Drawing.Point(153, 263);
-            this.txtB3.Name = "txtB3";
-            this.txtB3.Size = new System.Drawing.Size(89, 20);
-            this.txtB3.TabIndex = 31;
-            this.txtB3.Text = "1";
-            this.udB3.AutoSize = true;
-            this.udB3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udB3.Location = new System.Drawing.Point(248, 260);
-            this.udB3.Name = "udB3";
-            this.udB3.Size = new System.Drawing.Size(74, 26);
-            this.udB3.TabIndex = 32;
-            this.udB3.Text = "N·s/m";
-            this.udB3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblAmplitud.AutoSize = true;
-            this.lblAmplitud.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAmplitud.Location = new System.Drawing.Point(3, 286);
-            this.lblAmplitud.Name = "lblAmplitud";
-            this.lblAmplitud.Size = new System.Drawing.Size(144, 26);
-            this.lblAmplitud.TabIndex = 33;
-            this.lblAmplitud.Text = "A  (amplitud de F)";
-            this.lblAmplitud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtAmplitud.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAmplitud.Location = new System.Drawing.Point(153, 289);
-            this.txtAmplitud.Name = "txtAmplitud";
-            this.txtAmplitud.Size = new System.Drawing.Size(89, 20);
-            this.txtAmplitud.TabIndex = 34;
-            this.txtAmplitud.Text = "10";
-            this.udAmplitud.AutoSize = true;
-            this.udAmplitud.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udAmplitud.Location = new System.Drawing.Point(248, 286);
-            this.udAmplitud.Name = "udAmplitud";
-            this.udAmplitud.Size = new System.Drawing.Size(74, 26);
-            this.udAmplitud.TabIndex = 35;
-            this.udAmplitud.Text = "N";
-            this.udAmplitud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDuracion.AutoSize = true;
-            this.lblDuracion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDuracion.Location = new System.Drawing.Point(3, 312);
-            this.lblDuracion.Name = "lblDuracion";
-            this.lblDuracion.Size = new System.Drawing.Size(144, 26);
-            this.lblDuracion.TabIndex = 36;
-            this.lblDuracion.Text = "Tf  (duración de F)";
-            this.lblDuracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtDuracion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDuracion.Location = new System.Drawing.Point(153, 315);
-            this.txtDuracion.Name = "txtDuracion";
-            this.txtDuracion.Size = new System.Drawing.Size(89, 20);
-            this.txtDuracion.TabIndex = 37;
-            this.txtDuracion.Text = "1";
-            this.udDuracion.AutoSize = true;
-            this.udDuracion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udDuracion.Location = new System.Drawing.Point(248, 312);
-            this.udDuracion.Name = "udDuracion";
-            this.udDuracion.Size = new System.Drawing.Size(74, 26);
-            this.udDuracion.TabIndex = 38;
-            this.udDuracion.Text = "s";
-            this.udDuracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTiempo.AutoSize = true;
-            this.lblTiempo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTiempo.Location = new System.Drawing.Point(3, 338);
-            this.lblTiempo.Name = "lblTiempo";
-            this.lblTiempo.Size = new System.Drawing.Size(144, 26);
-            this.lblTiempo.TabIndex = 39;
-            this.lblTiempo.Text = "T  (tiempo simulación)";
-            this.lblTiempo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtTiempo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTiempo.Location = new System.Drawing.Point(153, 341);
-            this.txtTiempo.Name = "txtTiempo";
-            this.txtTiempo.Size = new System.Drawing.Size(89, 20);
-            this.txtTiempo.TabIndex = 40;
-            this.txtTiempo.Text = "10";
-            this.udTiempo.AutoSize = true;
-            this.udTiempo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udTiempo.Location = new System.Drawing.Point(248, 338);
-            this.udTiempo.Name = "udTiempo";
-            this.udTiempo.Size = new System.Drawing.Size(74, 26);
-            this.udTiempo.TabIndex = 41;
-            this.udTiempo.Text = "s";
-            this.udTiempo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblMuestras.AutoSize = true;
-            this.lblMuestras.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMuestras.Location = new System.Drawing.Point(3, 364);
-            this.lblMuestras.Name = "lblMuestras";
-            this.lblMuestras.Size = new System.Drawing.Size(144, 26);
-            this.lblMuestras.TabIndex = 42;
-            this.lblMuestras.Text = "N  (nº de muestras)";
-            this.lblMuestras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtMuestras.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMuestras.Location = new System.Drawing.Point(153, 367);
-            this.txtMuestras.Name = "txtMuestras";
-            this.txtMuestras.Size = new System.Drawing.Size(89, 20);
-            this.txtMuestras.TabIndex = 43;
-            this.txtMuestras.Text = "1000";
-            this.udMuestras.AutoSize = true;
-            this.udMuestras.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udMuestras.Location = new System.Drawing.Point(248, 364);
-            this.udMuestras.Name = "udMuestras";
-            this.udMuestras.Size = new System.Drawing.Size(74, 26);
-            this.udMuestras.TabIndex = 44;
-            this.udMuestras.Text = "-";
-            this.udMuestras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblEscala.AutoSize = true;
-            this.lblEscala.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEscala.Location = new System.Drawing.Point(3, 390);
-            this.lblEscala.Name = "lblEscala";
-            this.lblEscala.Size = new System.Drawing.Size(144, 26);
-            this.lblEscala.TabIndex = 45;
-            this.lblEscala.Text = "Escala  (animación)";
-            this.lblEscala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtEscala.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEscala.Location = new System.Drawing.Point(153, 393);
-            this.txtEscala.Name = "txtEscala";
-            this.txtEscala.Size = new System.Drawing.Size(89, 20);
-            this.txtEscala.TabIndex = 46;
-            this.txtEscala.Text = "100";
-            this.udEscala.AutoSize = true;
-            this.udEscala.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.udEscala.Location = new System.Drawing.Point(248, 390);
-            this.udEscala.Name = "udEscala";
-            this.udEscala.Size = new System.Drawing.Size(74, 26);
-            this.udEscala.TabIndex = 47;
-            this.udEscala.Text = "px/m";
-            this.udEscala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            //
+            // 
+            tlParametros.AutoSize = true;
+            tlParametros.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tlParametros.ColumnCount = 3;
+            tlParametros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
+            tlParametros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
+            tlParametros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147F));
+            tlParametros.Controls.Add(lblCabeceraParametro, 0, 0);
+            tlParametros.Controls.Add(lblCabeceraValor, 1, 0);
+            tlParametros.Controls.Add(lblCabeceraUnidad, 2, 0);
+            tlParametros.Controls.Add(lblM1, 0, 1);
+            tlParametros.Controls.Add(txtM1, 1, 1);
+            tlParametros.Controls.Add(udM1, 2, 1);
+            tlParametros.Controls.Add(lblM2, 0, 2);
+            tlParametros.Controls.Add(txtM2, 1, 2);
+            tlParametros.Controls.Add(udM2, 2, 2);
+            tlParametros.Controls.Add(lblM3, 0, 3);
+            tlParametros.Controls.Add(txtM3, 1, 3);
+            tlParametros.Controls.Add(udM3, 2, 3);
+            tlParametros.Controls.Add(lblK1, 0, 4);
+            tlParametros.Controls.Add(txtK1, 1, 4);
+            tlParametros.Controls.Add(udK1, 2, 4);
+            tlParametros.Controls.Add(lblK2, 0, 5);
+            tlParametros.Controls.Add(txtK2, 1, 5);
+            tlParametros.Controls.Add(udK2, 2, 5);
+            tlParametros.Controls.Add(lblK3, 0, 6);
+            tlParametros.Controls.Add(txtK3, 1, 6);
+            tlParametros.Controls.Add(udK3, 2, 6);
+            tlParametros.Controls.Add(lblK4, 0, 7);
+            tlParametros.Controls.Add(txtK4, 1, 7);
+            tlParametros.Controls.Add(udK4, 2, 7);
+            tlParametros.Controls.Add(lblB1, 0, 8);
+            tlParametros.Controls.Add(txtB1, 1, 8);
+            tlParametros.Controls.Add(udB1, 2, 8);
+            tlParametros.Controls.Add(lblB2, 0, 9);
+            tlParametros.Controls.Add(txtB2, 1, 9);
+            tlParametros.Controls.Add(udB2, 2, 9);
+            tlParametros.Controls.Add(lblB3, 0, 10);
+            tlParametros.Controls.Add(txtB3, 1, 10);
+            tlParametros.Controls.Add(udB3, 2, 10);
+            tlParametros.Controls.Add(lblAmplitud, 0, 11);
+            tlParametros.Controls.Add(txtAmplitud, 1, 11);
+            tlParametros.Controls.Add(udAmplitud, 2, 11);
+            tlParametros.Controls.Add(lblDuracion, 0, 12);
+            tlParametros.Controls.Add(txtDuracion, 1, 12);
+            tlParametros.Controls.Add(udDuracion, 2, 12);
+            tlParametros.Controls.Add(lblTiempo, 0, 13);
+            tlParametros.Controls.Add(txtTiempo, 1, 13);
+            tlParametros.Controls.Add(udTiempo, 2, 13);
+            tlParametros.Controls.Add(lblMuestras, 0, 14);
+            tlParametros.Controls.Add(txtMuestras, 1, 14);
+            tlParametros.Controls.Add(udMuestras, 2, 14);
+            tlParametros.Controls.Add(lblEscala, 0, 15);
+            tlParametros.Controls.Add(txtEscala, 1, 15);
+            tlParametros.Controls.Add(udEscala, 2, 15);
+            tlParametros.Dock = System.Windows.Forms.DockStyle.Top;
+            tlParametros.Location = new System.Drawing.Point(0, 0);
+            tlParametros.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tlParametros.Name = "tlParametros";
+            tlParametros.RowCount = 16;
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            tlParametros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tlParametros.Size = new System.Drawing.Size(490, 665);
+            tlParametros.TabIndex = 0;
+            // 
+            // lblCabeceraParametro
+            // 
+            lblCabeceraParametro.AutoSize = true;
+            lblCabeceraParametro.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblCabeceraParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            lblCabeceraParametro.Location = new System.Drawing.Point(4, 0);
+            lblCabeceraParametro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblCabeceraParametro.Name = "lblCabeceraParametro";
+            lblCabeceraParametro.Size = new System.Drawing.Size(206, 43);
+            lblCabeceraParametro.TabIndex = 0;
+            lblCabeceraParametro.Text = "Parámetro";
+            lblCabeceraParametro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCabeceraValor
+            // 
+            lblCabeceraValor.AutoSize = true;
+            lblCabeceraValor.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblCabeceraValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            lblCabeceraValor.Location = new System.Drawing.Point(218, 0);
+            lblCabeceraValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblCabeceraValor.Name = "lblCabeceraValor";
+            lblCabeceraValor.Size = new System.Drawing.Size(128, 43);
+            lblCabeceraValor.TabIndex = 1;
+            lblCabeceraValor.Text = "Valor";
+            lblCabeceraValor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCabeceraUnidad
+            // 
+            lblCabeceraUnidad.AutoSize = true;
+            lblCabeceraUnidad.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblCabeceraUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            lblCabeceraUnidad.Location = new System.Drawing.Point(354, 0);
+            lblCabeceraUnidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblCabeceraUnidad.Name = "lblCabeceraUnidad";
+            lblCabeceraUnidad.Size = new System.Drawing.Size(139, 43);
+            lblCabeceraUnidad.TabIndex = 2;
+            lblCabeceraUnidad.Text = "Unidad";
+            lblCabeceraUnidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblM1
+            // 
+            lblM1.AutoSize = true;
+            lblM1.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblM1.Location = new System.Drawing.Point(4, 43);
+            lblM1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblM1.Name = "lblM1";
+            lblM1.Size = new System.Drawing.Size(206, 43);
+            lblM1.TabIndex = 3;
+            lblM1.Text = "m1  (masa)";
+            lblM1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtM1
+            // 
+            txtM1.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtM1.Location = new System.Drawing.Point(218, 48);
+            txtM1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtM1.Name = "txtM1";
+            txtM1.Size = new System.Drawing.Size(128, 31);
+            txtM1.TabIndex = 4;
+            txtM1.Text = "1";
+            // 
+            // udM1
+            // 
+            udM1.AutoSize = true;
+            udM1.Dock = System.Windows.Forms.DockStyle.Fill;
+            udM1.Location = new System.Drawing.Point(354, 43);
+            udM1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udM1.Name = "udM1";
+            udM1.Size = new System.Drawing.Size(139, 43);
+            udM1.TabIndex = 5;
+            udM1.Text = "kg";
+            udM1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblM2
+            // 
+            lblM2.AutoSize = true;
+            lblM2.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblM2.Location = new System.Drawing.Point(4, 86);
+            lblM2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblM2.Name = "lblM2";
+            lblM2.Size = new System.Drawing.Size(206, 43);
+            lblM2.TabIndex = 6;
+            lblM2.Text = "m2  (masa)";
+            lblM2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtM2
+            // 
+            txtM2.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtM2.Location = new System.Drawing.Point(218, 91);
+            txtM2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtM2.Name = "txtM2";
+            txtM2.Size = new System.Drawing.Size(128, 31);
+            txtM2.TabIndex = 7;
+            txtM2.Text = "1";
+            // 
+            // udM2
+            // 
+            udM2.AutoSize = true;
+            udM2.Dock = System.Windows.Forms.DockStyle.Fill;
+            udM2.Location = new System.Drawing.Point(354, 86);
+            udM2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udM2.Name = "udM2";
+            udM2.Size = new System.Drawing.Size(139, 43);
+            udM2.TabIndex = 8;
+            udM2.Text = "kg";
+            udM2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblM3
+            // 
+            lblM3.AutoSize = true;
+            lblM3.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblM3.Location = new System.Drawing.Point(4, 129);
+            lblM3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblM3.Name = "lblM3";
+            lblM3.Size = new System.Drawing.Size(206, 43);
+            lblM3.TabIndex = 9;
+            lblM3.Text = "m3  (masa)";
+            lblM3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtM3
+            // 
+            txtM3.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtM3.Location = new System.Drawing.Point(218, 134);
+            txtM3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtM3.Name = "txtM3";
+            txtM3.Size = new System.Drawing.Size(128, 31);
+            txtM3.TabIndex = 10;
+            txtM3.Text = "1,5";
+            // 
+            // udM3
+            // 
+            udM3.AutoSize = true;
+            udM3.Dock = System.Windows.Forms.DockStyle.Fill;
+            udM3.Location = new System.Drawing.Point(354, 129);
+            udM3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udM3.Name = "udM3";
+            udM3.Size = new System.Drawing.Size(139, 43);
+            udM3.TabIndex = 11;
+            udM3.Text = "kg";
+            udM3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblK1
+            // 
+            lblK1.AutoSize = true;
+            lblK1.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblK1.Location = new System.Drawing.Point(4, 172);
+            lblK1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblK1.Name = "lblK1";
+            lblK1.Size = new System.Drawing.Size(206, 43);
+            lblK1.TabIndex = 12;
+            lblK1.Text = "k1  (resorte sup.-m1)";
+            lblK1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtK1
+            // 
+            txtK1.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtK1.Location = new System.Drawing.Point(218, 177);
+            txtK1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtK1.Name = "txtK1";
+            txtK1.Size = new System.Drawing.Size(128, 31);
+            txtK1.TabIndex = 13;
+            txtK1.Text = "120";
+            // 
+            // udK1
+            // 
+            udK1.AutoSize = true;
+            udK1.Dock = System.Windows.Forms.DockStyle.Fill;
+            udK1.Location = new System.Drawing.Point(354, 172);
+            udK1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udK1.Name = "udK1";
+            udK1.Size = new System.Drawing.Size(139, 43);
+            udK1.TabIndex = 14;
+            udK1.Text = "N/m";
+            udK1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblK2
+            // 
+            lblK2.AutoSize = true;
+            lblK2.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblK2.Location = new System.Drawing.Point(4, 215);
+            lblK2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblK2.Name = "lblK2";
+            lblK2.Size = new System.Drawing.Size(206, 43);
+            lblK2.TabIndex = 15;
+            lblK2.Text = "k2  (resorte m1-m3)";
+            lblK2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtK2
+            // 
+            txtK2.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtK2.Location = new System.Drawing.Point(218, 220);
+            txtK2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtK2.Name = "txtK2";
+            txtK2.Size = new System.Drawing.Size(128, 31);
+            txtK2.TabIndex = 16;
+            txtK2.Text = "80";
+            // 
+            // udK2
+            // 
+            udK2.AutoSize = true;
+            udK2.Dock = System.Windows.Forms.DockStyle.Fill;
+            udK2.Location = new System.Drawing.Point(354, 215);
+            udK2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udK2.Name = "udK2";
+            udK2.Size = new System.Drawing.Size(139, 43);
+            udK2.TabIndex = 17;
+            udK2.Text = "N/m";
+            udK2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblK3
+            // 
+            lblK3.AutoSize = true;
+            lblK3.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblK3.Location = new System.Drawing.Point(4, 258);
+            lblK3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblK3.Name = "lblK3";
+            lblK3.Size = new System.Drawing.Size(206, 43);
+            lblK3.TabIndex = 18;
+            lblK3.Text = "k3  (resorte m3-sup.inf.)";
+            lblK3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtK3
+            // 
+            txtK3.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtK3.Location = new System.Drawing.Point(218, 263);
+            txtK3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtK3.Name = "txtK3";
+            txtK3.Size = new System.Drawing.Size(128, 31);
+            txtK3.TabIndex = 19;
+            txtK3.Text = "100";
+            // 
+            // udK3
+            // 
+            udK3.AutoSize = true;
+            udK3.Dock = System.Windows.Forms.DockStyle.Fill;
+            udK3.Location = new System.Drawing.Point(354, 258);
+            udK3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udK3.Name = "udK3";
+            udK3.Size = new System.Drawing.Size(139, 43);
+            udK3.TabIndex = 20;
+            udK3.Text = "N/m";
+            udK3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblK4
+            // 
+            lblK4.AutoSize = true;
+            lblK4.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblK4.Location = new System.Drawing.Point(4, 301);
+            lblK4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblK4.Name = "lblK4";
+            lblK4.Size = new System.Drawing.Size(206, 43);
+            lblK4.TabIndex = 21;
+            lblK4.Text = "k4  (resorte sup.-m2)";
+            lblK4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtK4
+            // 
+            txtK4.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtK4.Location = new System.Drawing.Point(218, 306);
+            txtK4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtK4.Name = "txtK4";
+            txtK4.Size = new System.Drawing.Size(128, 31);
+            txtK4.TabIndex = 22;
+            txtK4.Text = "90";
+            // 
+            // udK4
+            // 
+            udK4.AutoSize = true;
+            udK4.Dock = System.Windows.Forms.DockStyle.Fill;
+            udK4.Location = new System.Drawing.Point(354, 301);
+            udK4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udK4.Name = "udK4";
+            udK4.Size = new System.Drawing.Size(139, 43);
+            udK4.TabIndex = 23;
+            udK4.Text = "N/m";
+            udK4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblB1
+            // 
+            lblB1.AutoSize = true;
+            lblB1.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblB1.Location = new System.Drawing.Point(4, 344);
+            lblB1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblB1.Name = "lblB1";
+            lblB1.Size = new System.Drawing.Size(206, 43);
+            lblB1.TabIndex = 24;
+            lblB1.Text = "b1  (amort. sup.-m1)";
+            lblB1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtB1
+            // 
+            txtB1.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtB1.Location = new System.Drawing.Point(218, 349);
+            txtB1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtB1.Name = "txtB1";
+            txtB1.Size = new System.Drawing.Size(128, 31);
+            txtB1.TabIndex = 25;
+            txtB1.Text = "2";
+            // 
+            // udB1
+            // 
+            udB1.AutoSize = true;
+            udB1.Dock = System.Windows.Forms.DockStyle.Fill;
+            udB1.Location = new System.Drawing.Point(354, 344);
+            udB1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udB1.Name = "udB1";
+            udB1.Size = new System.Drawing.Size(139, 43);
+            udB1.TabIndex = 26;
+            udB1.Text = "N·s/m";
+            udB1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblB2
+            // 
+            lblB2.AutoSize = true;
+            lblB2.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblB2.Location = new System.Drawing.Point(4, 387);
+            lblB2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblB2.Name = "lblB2";
+            lblB2.Size = new System.Drawing.Size(206, 43);
+            lblB2.TabIndex = 27;
+            lblB2.Text = "b2  (amort. sup.-m2)";
+            lblB2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtB2
+            // 
+            txtB2.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtB2.Location = new System.Drawing.Point(218, 392);
+            txtB2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtB2.Name = "txtB2";
+            txtB2.Size = new System.Drawing.Size(128, 31);
+            txtB2.TabIndex = 28;
+            txtB2.Text = "1,5";
+            // 
+            // udB2
+            // 
+            udB2.AutoSize = true;
+            udB2.Dock = System.Windows.Forms.DockStyle.Fill;
+            udB2.Location = new System.Drawing.Point(354, 387);
+            udB2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udB2.Name = "udB2";
+            udB2.Size = new System.Drawing.Size(139, 43);
+            udB2.TabIndex = 29;
+            udB2.Text = "N·s/m";
+            udB2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblB3
+            // 
+            lblB3.AutoSize = true;
+            lblB3.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblB3.Location = new System.Drawing.Point(4, 430);
+            lblB3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblB3.Name = "lblB3";
+            lblB3.Size = new System.Drawing.Size(206, 43);
+            lblB3.TabIndex = 30;
+            lblB3.Text = "b3  (amort. m2-m3)";
+            lblB3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtB3
+            // 
+            txtB3.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtB3.Location = new System.Drawing.Point(218, 435);
+            txtB3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtB3.Name = "txtB3";
+            txtB3.Size = new System.Drawing.Size(128, 31);
+            txtB3.TabIndex = 31;
+            txtB3.Text = "1";
+            // 
+            // udB3
+            // 
+            udB3.AutoSize = true;
+            udB3.Dock = System.Windows.Forms.DockStyle.Fill;
+            udB3.Location = new System.Drawing.Point(354, 430);
+            udB3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udB3.Name = "udB3";
+            udB3.Size = new System.Drawing.Size(139, 43);
+            udB3.TabIndex = 32;
+            udB3.Text = "N·s/m";
+            udB3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAmplitud
+            // 
+            lblAmplitud.AutoSize = true;
+            lblAmplitud.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblAmplitud.Location = new System.Drawing.Point(4, 473);
+            lblAmplitud.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblAmplitud.Name = "lblAmplitud";
+            lblAmplitud.Size = new System.Drawing.Size(206, 43);
+            lblAmplitud.TabIndex = 33;
+            lblAmplitud.Text = "A  (amplitud de F)";
+            lblAmplitud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtAmplitud
+            // 
+            txtAmplitud.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtAmplitud.Location = new System.Drawing.Point(218, 478);
+            txtAmplitud.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtAmplitud.Name = "txtAmplitud";
+            txtAmplitud.Size = new System.Drawing.Size(128, 31);
+            txtAmplitud.TabIndex = 34;
+            txtAmplitud.Text = "10";
+            // 
+            // udAmplitud
+            // 
+            udAmplitud.AutoSize = true;
+            udAmplitud.Dock = System.Windows.Forms.DockStyle.Fill;
+            udAmplitud.Location = new System.Drawing.Point(354, 473);
+            udAmplitud.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udAmplitud.Name = "udAmplitud";
+            udAmplitud.Size = new System.Drawing.Size(139, 43);
+            udAmplitud.TabIndex = 35;
+            udAmplitud.Text = "N";
+            udAmplitud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblDuracion
+            // 
+            lblDuracion.AutoSize = true;
+            lblDuracion.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblDuracion.Location = new System.Drawing.Point(4, 516);
+            lblDuracion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblDuracion.Name = "lblDuracion";
+            lblDuracion.Size = new System.Drawing.Size(206, 43);
+            lblDuracion.TabIndex = 36;
+            lblDuracion.Text = "Tf  (duración de F)";
+            lblDuracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtDuracion
+            // 
+            txtDuracion.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtDuracion.Location = new System.Drawing.Point(218, 521);
+            txtDuracion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtDuracion.Name = "txtDuracion";
+            txtDuracion.Size = new System.Drawing.Size(128, 31);
+            txtDuracion.TabIndex = 37;
+            txtDuracion.Text = "1";
+            // 
+            // udDuracion
+            // 
+            udDuracion.AutoSize = true;
+            udDuracion.Dock = System.Windows.Forms.DockStyle.Fill;
+            udDuracion.Location = new System.Drawing.Point(354, 516);
+            udDuracion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udDuracion.Name = "udDuracion";
+            udDuracion.Size = new System.Drawing.Size(139, 43);
+            udDuracion.TabIndex = 38;
+            udDuracion.Text = "s";
+            udDuracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTiempo
+            // 
+            lblTiempo.AutoSize = true;
+            lblTiempo.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblTiempo.Location = new System.Drawing.Point(4, 559);
+            lblTiempo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblTiempo.Name = "lblTiempo";
+            lblTiempo.Size = new System.Drawing.Size(206, 43);
+            lblTiempo.TabIndex = 39;
+            lblTiempo.Text = "T  (tiempo simulación)";
+            lblTiempo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtTiempo
+            // 
+            txtTiempo.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtTiempo.Location = new System.Drawing.Point(218, 564);
+            txtTiempo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtTiempo.Name = "txtTiempo";
+            txtTiempo.Size = new System.Drawing.Size(128, 31);
+            txtTiempo.TabIndex = 40;
+            txtTiempo.Text = "10";
+            // 
+            // udTiempo
+            // 
+            udTiempo.AutoSize = true;
+            udTiempo.Dock = System.Windows.Forms.DockStyle.Fill;
+            udTiempo.Location = new System.Drawing.Point(354, 559);
+            udTiempo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udTiempo.Name = "udTiempo";
+            udTiempo.Size = new System.Drawing.Size(139, 43);
+            udTiempo.TabIndex = 41;
+            udTiempo.Text = "s";
+            udTiempo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblMuestras
+            // 
+            lblMuestras.AutoSize = true;
+            lblMuestras.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblMuestras.Location = new System.Drawing.Point(4, 602);
+            lblMuestras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblMuestras.Name = "lblMuestras";
+            lblMuestras.Size = new System.Drawing.Size(206, 43);
+            lblMuestras.TabIndex = 42;
+            lblMuestras.Text = "N  (nº de muestras)";
+            lblMuestras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtMuestras
+            // 
+            txtMuestras.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtMuestras.Location = new System.Drawing.Point(218, 607);
+            txtMuestras.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtMuestras.Name = "txtMuestras";
+            txtMuestras.Size = new System.Drawing.Size(128, 31);
+            txtMuestras.TabIndex = 43;
+            txtMuestras.Text = "1000";
+            // 
+            // udMuestras
+            // 
+            udMuestras.AutoSize = true;
+            udMuestras.Dock = System.Windows.Forms.DockStyle.Fill;
+            udMuestras.Location = new System.Drawing.Point(354, 602);
+            udMuestras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udMuestras.Name = "udMuestras";
+            udMuestras.Size = new System.Drawing.Size(139, 43);
+            udMuestras.TabIndex = 44;
+            udMuestras.Text = "-";
+            udMuestras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblEscala
+            // 
+            lblEscala.AutoSize = true;
+            lblEscala.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblEscala.Location = new System.Drawing.Point(4, 645);
+            lblEscala.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblEscala.Name = "lblEscala";
+            lblEscala.Size = new System.Drawing.Size(206, 20);
+            lblEscala.TabIndex = 45;
+            lblEscala.Text = "Escala  (animación)";
+            lblEscala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtEscala
+            // 
+            txtEscala.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtEscala.Location = new System.Drawing.Point(218, 650);
+            txtEscala.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtEscala.Name = "txtEscala";
+            txtEscala.Size = new System.Drawing.Size(128, 31);
+            txtEscala.TabIndex = 46;
+            txtEscala.Text = "100";
+            // 
+            // udEscala
+            // 
+            udEscala.AutoSize = true;
+            udEscala.Dock = System.Windows.Forms.DockStyle.Fill;
+            udEscala.Location = new System.Drawing.Point(354, 645);
+            udEscala.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            udEscala.Name = "udEscala";
+            udEscala.Size = new System.Drawing.Size(139, 20);
+            udEscala.TabIndex = 47;
+            udEscala.Text = "px/m";
+            udEscala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // gbAcciones
-            //
-            this.gbAcciones.Controls.Add(this.tlAcciones);
-            this.gbAcciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbAcciones.Location = new System.Drawing.Point(3, 691);
-            this.gbAcciones.Name = "gbAcciones";
-            this.gbAcciones.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.gbAcciones.Size = new System.Drawing.Size(354, 167);
-            this.gbAcciones.TabIndex = 1;
-            this.gbAcciones.TabStop = false;
-            this.gbAcciones.Text = "Acciones";
-            //
+            // 
+            gbAcciones.Controls.Add(tlAcciones);
+            gbAcciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            gbAcciones.Location = new System.Drawing.Point(4, 1147);
+            gbAcciones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbAcciones.Name = "gbAcciones";
+            gbAcciones.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbAcciones.Size = new System.Drawing.Size(498, 273);
+            gbAcciones.TabIndex = 1;
+            gbAcciones.TabStop = false;
+            gbAcciones.Text = "Acciones";
+            // 
             // tlAcciones
-            //
-            this.tlAcciones.ColumnCount = 1;
-            this.tlAcciones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlAcciones.Controls.Add(this.flBotones, 0, 0);
-            this.tlAcciones.Controls.Add(this.progressBarSimulacion, 0, 1);
-            this.tlAcciones.Controls.Add(this.lblProgreso, 0, 2);
-            this.tlAcciones.Controls.Add(this.lblAviso, 0, 3);
-            this.tlAcciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlAcciones.Location = new System.Drawing.Point(6, 17);
-            this.tlAcciones.Name = "tlAcciones";
-            this.tlAcciones.RowCount = 4;
-            this.tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlAcciones.Size = new System.Drawing.Size(348, 144);
-            this.tlAcciones.TabIndex = 0;
-            //
+            // 
+            tlAcciones.ColumnCount = 1;
+            tlAcciones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlAcciones.Controls.Add(flBotones, 0, 0);
+            tlAcciones.Controls.Add(progressBarSimulacion, 0, 1);
+            tlAcciones.Controls.Add(lblProgreso, 0, 2);
+            tlAcciones.Controls.Add(lblAviso, 0, 3);
+            tlAcciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlAcciones.Location = new System.Drawing.Point(4, 29);
+            tlAcciones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tlAcciones.Name = "tlAcciones";
+            tlAcciones.RowCount = 4;
+            tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            tlAcciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlAcciones.Size = new System.Drawing.Size(490, 239);
+            tlAcciones.TabIndex = 0;
+            // 
             // flBotones
-            //
-            this.flBotones.Controls.Add(this.btnSimular);
-            this.flBotones.Controls.Add(this.btnReproducir);
-            this.flBotones.Controls.Add(this.btnReiniciar);
-            this.flBotones.Controls.Add(this.btnRestablecer);
-            this.flBotones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flBotones.Location = new System.Drawing.Point(3, 0);
-            this.flBotones.Name = "flBotones";
-            this.flBotones.Size = new System.Drawing.Size(342, 62);
-            this.flBotones.TabIndex = 0;
-            this.flBotones.WrapContents = true;
-            //
+            // 
+            flBotones.Controls.Add(btnSimular);
+            flBotones.Controls.Add(btnReproducir);
+            flBotones.Controls.Add(btnReiniciar);
+            flBotones.Controls.Add(btnRestablecer);
+            flBotones.Dock = System.Windows.Forms.DockStyle.Fill;
+            flBotones.Location = new System.Drawing.Point(4, 5);
+            flBotones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            flBotones.Name = "flBotones";
+            flBotones.Size = new System.Drawing.Size(482, 93);
+            flBotones.TabIndex = 0;
+            // 
             // btnSimular
-            //
-            this.btnSimular.AutoSize = true;
-            this.btnSimular.Location = new System.Drawing.Point(3, 3);
-            this.btnSimular.Name = "btnSimular";
-            this.btnSimular.Size = new System.Drawing.Size(85, 23);
-            this.btnSimular.TabIndex = 0;
-            this.btnSimular.Text = "Simular";
-            this.btnSimular.UseVisualStyleBackColor = true;
-            this.btnSimular.Click += new System.EventHandler(this.btnSimular_Click);
-            //
+            // 
+            btnSimular.AutoSize = true;
+            btnSimular.Location = new System.Drawing.Point(4, 5);
+            btnSimular.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            btnSimular.Name = "btnSimular";
+            btnSimular.Size = new System.Drawing.Size(121, 58);
+            btnSimular.TabIndex = 0;
+            btnSimular.Text = "Simular";
+            btnSimular.UseVisualStyleBackColor = true;
+            btnSimular.Click += btnSimular_Click;
+            // 
             // btnReproducir
-            //
-            this.btnReproducir.AutoSize = true;
-            this.btnReproducir.Location = new System.Drawing.Point(94, 3);
-            this.btnReproducir.Name = "btnReproducir";
-            this.btnReproducir.Size = new System.Drawing.Size(113, 23);
-            this.btnReproducir.TabIndex = 1;
-            this.btnReproducir.Text = "Reproducir";
-            this.btnReproducir.UseVisualStyleBackColor = true;
-            this.btnReproducir.Click += new System.EventHandler(this.btnReproducir_Click);
-            //
+            // 
+            btnReproducir.AutoSize = true;
+            btnReproducir.Location = new System.Drawing.Point(133, 5);
+            btnReproducir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            btnReproducir.Name = "btnReproducir";
+            btnReproducir.Size = new System.Drawing.Size(161, 58);
+            btnReproducir.TabIndex = 1;
+            btnReproducir.Text = "Reproducir";
+            btnReproducir.UseVisualStyleBackColor = true;
+            btnReproducir.Click += btnReproducir_Click;
+            // 
             // btnReiniciar
-            //
-            this.btnReiniciar.AutoSize = true;
-            this.btnReiniciar.Location = new System.Drawing.Point(213, 3);
-            this.btnReiniciar.Name = "btnReiniciar";
-            this.btnReiniciar.Size = new System.Drawing.Size(122, 23);
-            this.btnReiniciar.TabIndex = 2;
-            this.btnReiniciar.Text = "Reiniciar animación";
-            this.btnReiniciar.UseVisualStyleBackColor = true;
-            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
-            //
+            // 
+            btnReiniciar.AutoSize = true;
+            btnReiniciar.Location = new System.Drawing.Point(4, 73);
+            btnReiniciar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            btnReiniciar.Name = "btnReiniciar";
+            btnReiniciar.Size = new System.Drawing.Size(246, 58);
+            btnReiniciar.TabIndex = 2;
+            btnReiniciar.Text = "Reiniciar animación";
+            btnReiniciar.UseVisualStyleBackColor = true;
+            btnReiniciar.Click += btnReiniciar_Click;
+            // 
             // btnRestablecer
-            //
-            this.btnRestablecer.AutoSize = true;
-            this.btnRestablecer.Location = new System.Drawing.Point(3, 32);
-            this.btnRestablecer.Name = "btnRestablecer";
-            this.btnRestablecer.Size = new System.Drawing.Size(100, 23);
-            this.btnRestablecer.TabIndex = 3;
-            this.btnRestablecer.Text = "Restablecer";
-            this.btnRestablecer.UseVisualStyleBackColor = true;
-            this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
-            //
+            // 
+            btnRestablecer.AutoSize = true;
+            btnRestablecer.Location = new System.Drawing.Point(258, 73);
+            btnRestablecer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            btnRestablecer.Name = "btnRestablecer";
+            btnRestablecer.Size = new System.Drawing.Size(159, 58);
+            btnRestablecer.TabIndex = 3;
+            btnRestablecer.Text = "Restablecer";
+            btnRestablecer.UseVisualStyleBackColor = true;
+            btnRestablecer.Click += btnRestablecer_Click;
+            // 
             // progressBarSimulacion
-            //
-            this.progressBarSimulacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.progressBarSimulacion.Location = new System.Drawing.Point(3, 62);
-            this.progressBarSimulacion.Name = "progressBarSimulacion";
-            this.progressBarSimulacion.Size = new System.Drawing.Size(342, 20);
-            this.progressBarSimulacion.TabIndex = 1;
-            //
+            // 
+            progressBarSimulacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            progressBarSimulacion.Location = new System.Drawing.Point(4, 108);
+            progressBarSimulacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            progressBarSimulacion.Name = "progressBarSimulacion";
+            progressBarSimulacion.Size = new System.Drawing.Size(482, 23);
+            progressBarSimulacion.TabIndex = 1;
+            // 
             // lblProgreso
-            //
-            this.lblProgreso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblProgreso.Location = new System.Drawing.Point(3, 82);
-            this.lblProgreso.Name = "lblProgreso";
-            this.lblProgreso.Size = new System.Drawing.Size(342, 20);
-            this.lblProgreso.TabIndex = 2;
-            this.lblProgreso.Text = "Listo para simular.";
-            this.lblProgreso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            //
+            // 
+            lblProgreso.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblProgreso.Location = new System.Drawing.Point(4, 136);
+            lblProgreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblProgreso.Name = "lblProgreso";
+            lblProgreso.Size = new System.Drawing.Size(482, 33);
+            lblProgreso.TabIndex = 2;
+            lblProgreso.Text = "Listo para simular.";
+            lblProgreso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // lblAviso
-            //
-            this.lblAviso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAviso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblAviso.Location = new System.Drawing.Point(3, 102);
-            this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(342, 39);
-            this.lblAviso.TabIndex = 3;
-            this.lblAviso.Text = "";
-            //
+            // 
+            lblAviso.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblAviso.ForeColor = System.Drawing.Color.FromArgb(192, 0, 0);
+            lblAviso.Location = new System.Drawing.Point(4, 169);
+            lblAviso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblAviso.Name = "lblAviso";
+            lblAviso.Size = new System.Drawing.Size(482, 70);
+            lblAviso.TabIndex = 3;
+            // 
             // tlContenido
-            //
-            this.tlContenido.ColumnCount = 2;
-            this.tlContenido.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlContenido.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlContenido.Controls.Add(this.gbGrafica, 0, 0);
-            this.tlContenido.Controls.Add(this.gbAnimacion, 1, 0);
-            this.tlContenido.Controls.Add(this.gbMuestras, 0, 1);
-            this.tlContenido.Controls.Add(this.gbAnalisis, 1, 1);
-            this.tlContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlContenido.Location = new System.Drawing.Point(363, 3);
-            this.tlContenido.Name = "tlContenido";
-            this.tlContenido.RowCount = 2;
-            this.tlContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
-            this.tlContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tlContenido.Size = new System.Drawing.Size(1034, 855);
-            this.tlContenido.TabIndex = 2;
-            //
+            // 
+            tlContenido.ColumnCount = 2;
+            tlContenido.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tlContenido.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tlContenido.Controls.Add(gbGrafica, 0, 0);
+            tlContenido.Controls.Add(gbAnimacion, 1, 0);
+            tlContenido.Controls.Add(gbMuestras, 0, 1);
+            tlContenido.Controls.Add(gbAnalisis, 1, 1);
+            tlContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlContenido.Location = new System.Drawing.Point(518, 5);
+            tlContenido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tlContenido.Name = "tlContenido";
+            tlContenido.RowCount = 2;
+            tlContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            tlContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            tlContenido.Size = new System.Drawing.Size(1478, 1425);
+            tlContenido.TabIndex = 2;
+            // 
             // gbGrafica
-            //
-            this.gbGrafica.Controls.Add(this.graficaPlot);
-            this.gbGrafica.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbGrafica.Location = new System.Drawing.Point(3, 3);
-            this.gbGrafica.Name = "gbGrafica";
-            this.gbGrafica.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.gbGrafica.Size = new System.Drawing.Size(514, 467);
-            this.gbGrafica.TabIndex = 0;
-            this.gbGrafica.TabStop = false;
-            this.gbGrafica.Text = "Respuesta temporal (ScottPlot)";
-            //
+            // 
+            gbGrafica.Controls.Add(graficaPlot);
+            gbGrafica.Dock = System.Windows.Forms.DockStyle.Fill;
+            gbGrafica.Location = new System.Drawing.Point(4, 5);
+            gbGrafica.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbGrafica.Name = "gbGrafica";
+            gbGrafica.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbGrafica.Size = new System.Drawing.Size(731, 773);
+            gbGrafica.TabIndex = 0;
+            gbGrafica.TabStop = false;
+            gbGrafica.Text = "Respuesta temporal (ScottPlot)";
+            // 
             // graficaPlot
-            //
-            this.graficaPlot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.graficaPlot.Location = new System.Drawing.Point(6, 17);
-            this.graficaPlot.Name = "graficaPlot";
-            this.graficaPlot.Size = new System.Drawing.Size(508, 447);
-            this.graficaPlot.TabIndex = 0;
-            //
+            // 
+            graficaPlot.DisplayScale = 1.5F;
+            graficaPlot.Dock = System.Windows.Forms.DockStyle.Fill;
+            graficaPlot.Location = new System.Drawing.Point(4, 29);
+            graficaPlot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            graficaPlot.Name = "graficaPlot";
+            graficaPlot.Size = new System.Drawing.Size(723, 739);
+            graficaPlot.TabIndex = 0;
+            // 
             // gbAnimacion
-            //
-            this.gbAnimacion.Controls.Add(this.tlAnimacion);
-            this.gbAnimacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbAnimacion.Location = new System.Drawing.Point(520, 3);
-            this.gbAnimacion.Name = "gbAnimacion";
-            this.gbAnimacion.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.gbAnimacion.Size = new System.Drawing.Size(514, 467);
-            this.gbAnimacion.TabIndex = 1;
-            this.gbAnimacion.TabStop = false;
-            this.gbAnimacion.Text = "Animación del sistema";
-            //
+            // 
+            gbAnimacion.Controls.Add(tlAnimacion);
+            gbAnimacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            gbAnimacion.Location = new System.Drawing.Point(743, 5);
+            gbAnimacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbAnimacion.Name = "gbAnimacion";
+            gbAnimacion.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbAnimacion.Size = new System.Drawing.Size(731, 773);
+            gbAnimacion.TabIndex = 1;
+            gbAnimacion.TabStop = false;
+            gbAnimacion.Text = "Animación del sistema";
+            // 
             // tlAnimacion
-            //
-            this.tlAnimacion.ColumnCount = 1;
-            this.tlAnimacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlAnimacion.Controls.Add(this.panelAnimacion, 0, 0);
-            this.tlAnimacion.Controls.Add(this.tlEstadoAnimacion, 0, 1);
-            this.tlAnimacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlAnimacion.Location = new System.Drawing.Point(6, 17);
-            this.tlAnimacion.Name = "tlAnimacion";
-            this.tlAnimacion.RowCount = 2;
-            this.tlAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 72F));
-            this.tlAnimacion.Size = new System.Drawing.Size(508, 444);
-            this.tlAnimacion.TabIndex = 0;
-            //
+            // 
+            tlAnimacion.ColumnCount = 1;
+            tlAnimacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlAnimacion.Controls.Add(panelAnimacion, 0, 0);
+            tlAnimacion.Controls.Add(tlEstadoAnimacion, 0, 1);
+            tlAnimacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlAnimacion.Location = new System.Drawing.Point(4, 29);
+            tlAnimacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tlAnimacion.Name = "tlAnimacion";
+            tlAnimacion.RowCount = 2;
+            tlAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            tlAnimacion.Size = new System.Drawing.Size(723, 739);
+            tlAnimacion.TabIndex = 0;
+            // 
             // panelAnimacion
-            //
-            this.panelAnimacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.panelAnimacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAnimacion.Location = new System.Drawing.Point(0, 0);
-            this.panelAnimacion.Name = "panelAnimacion";
-            this.panelAnimacion.Size = new System.Drawing.Size(508, 372);
-            this.panelAnimacion.TabIndex = 0;
-            this.panelAnimacion.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAnimacion_Paint);
-            //
+            // 
+            panelAnimacion.BackColor = System.Drawing.Color.FromArgb(250, 250, 252);
+            panelAnimacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelAnimacion.Location = new System.Drawing.Point(4, 5);
+            panelAnimacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            panelAnimacion.Name = "panelAnimacion";
+            panelAnimacion.Size = new System.Drawing.Size(715, 609);
+            panelAnimacion.TabIndex = 0;
+            panelAnimacion.Paint += panelAnimacion_Paint;
+            // 
             // tlEstadoAnimacion
-            //
-            this.tlEstadoAnimacion.ColumnCount = 2;
-            this.tlEstadoAnimacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlEstadoAnimacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlEstadoAnimacion.Controls.Add(this.lblTiempoActual, 0, 0);
-            this.tlEstadoAnimacion.Controls.Add(this.lblFuerzaActual, 1, 0);
-            this.tlEstadoAnimacion.Controls.Add(this.lblY1Actual, 0, 1);
-            this.tlEstadoAnimacion.Controls.Add(this.lblY2Actual, 1, 1);
-            this.tlEstadoAnimacion.Controls.Add(this.lblY3Actual, 0, 2);
-            this.tlEstadoAnimacion.Controls.Add(this.lblAvisoEscala, 1, 2);
-            this.tlEstadoAnimacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlEstadoAnimacion.Location = new System.Drawing.Point(0, 372);
-            this.tlEstadoAnimacion.Name = "tlEstadoAnimacion";
-            this.tlEstadoAnimacion.RowCount = 3;
-            this.tlEstadoAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlEstadoAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlEstadoAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlEstadoAnimacion.Size = new System.Drawing.Size(508, 72);
-            this.tlEstadoAnimacion.TabIndex = 1;
-            //
-            // Etiquetas del estado instantáneo
-            //
-            this.lblTiempoActual.AutoSize = true;
-            this.lblTiempoActual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTiempoActual.Location = new System.Drawing.Point(0, 0);
-            this.lblTiempoActual.Name = "lblTiempoActual";
-            this.lblTiempoActual.Size = new System.Drawing.Size(254, 24);
-            this.lblTiempoActual.TabIndex = 0;
-            this.lblTiempoActual.Text = "t = --";
-            this.lblTiempoActual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblFuerzaActual.AutoSize = true;
-            this.lblFuerzaActual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFuerzaActual.Location = new System.Drawing.Point(254, 0);
-            this.lblFuerzaActual.Name = "lblFuerzaActual";
-            this.lblFuerzaActual.Size = new System.Drawing.Size(254, 24);
-            this.lblFuerzaActual.TabIndex = 1;
-            this.lblFuerzaActual.Text = "F = --";
-            this.lblFuerzaActual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblY1Actual.AutoSize = true;
-            this.lblY1Actual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblY1Actual.Location = new System.Drawing.Point(0, 24);
-            this.lblY1Actual.Name = "lblY1Actual";
-            this.lblY1Actual.Size = new System.Drawing.Size(254, 24);
-            this.lblY1Actual.TabIndex = 2;
-            this.lblY1Actual.Text = "y1 = --";
-            this.lblY1Actual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblY2Actual.AutoSize = true;
-            this.lblY2Actual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblY2Actual.Location = new System.Drawing.Point(254, 24);
-            this.lblY2Actual.Name = "lblY2Actual";
-            this.lblY2Actual.Size = new System.Drawing.Size(254, 24);
-            this.lblY2Actual.TabIndex = 3;
-            this.lblY2Actual.Text = "y2 = --";
-            this.lblY2Actual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblY3Actual.AutoSize = true;
-            this.lblY3Actual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblY3Actual.Location = new System.Drawing.Point(0, 48);
-            this.lblY3Actual.Name = "lblY3Actual";
-            this.lblY3Actual.Size = new System.Drawing.Size(254, 24);
-            this.lblY3Actual.TabIndex = 4;
-            this.lblY3Actual.Text = "y3 = --";
-            this.lblY3Actual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblAvisoEscala.AutoSize = true;
-            this.lblAvisoEscala.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAvisoEscala.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblAvisoEscala.Location = new System.Drawing.Point(254, 48);
-            this.lblAvisoEscala.Name = "lblAvisoEscala";
-            this.lblAvisoEscala.Size = new System.Drawing.Size(254, 24);
-            this.lblAvisoEscala.TabIndex = 5;
-            this.lblAvisoEscala.Text = "";
-            this.lblAvisoEscala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            //
+            // 
+            tlEstadoAnimacion.ColumnCount = 2;
+            tlEstadoAnimacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tlEstadoAnimacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tlEstadoAnimacion.Controls.Add(lblTiempoActual, 0, 0);
+            tlEstadoAnimacion.Controls.Add(lblFuerzaActual, 1, 0);
+            tlEstadoAnimacion.Controls.Add(lblY1Actual, 0, 1);
+            tlEstadoAnimacion.Controls.Add(lblY2Actual, 1, 1);
+            tlEstadoAnimacion.Controls.Add(lblY3Actual, 0, 2);
+            tlEstadoAnimacion.Controls.Add(lblAvisoEscala, 1, 2);
+            tlEstadoAnimacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlEstadoAnimacion.Location = new System.Drawing.Point(4, 624);
+            tlEstadoAnimacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tlEstadoAnimacion.Name = "tlEstadoAnimacion";
+            tlEstadoAnimacion.RowCount = 3;
+            tlEstadoAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            tlEstadoAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            tlEstadoAnimacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            tlEstadoAnimacion.Size = new System.Drawing.Size(715, 110);
+            tlEstadoAnimacion.TabIndex = 1;
+            // 
+            // lblTiempoActual
+            // 
+            lblTiempoActual.AutoSize = true;
+            lblTiempoActual.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblTiempoActual.Location = new System.Drawing.Point(4, 0);
+            lblTiempoActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblTiempoActual.Name = "lblTiempoActual";
+            lblTiempoActual.Size = new System.Drawing.Size(349, 40);
+            lblTiempoActual.TabIndex = 0;
+            lblTiempoActual.Text = "t = --";
+            lblTiempoActual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblFuerzaActual
+            // 
+            lblFuerzaActual.AutoSize = true;
+            lblFuerzaActual.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblFuerzaActual.Location = new System.Drawing.Point(361, 0);
+            lblFuerzaActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblFuerzaActual.Name = "lblFuerzaActual";
+            lblFuerzaActual.Size = new System.Drawing.Size(350, 40);
+            lblFuerzaActual.TabIndex = 1;
+            lblFuerzaActual.Text = "F = --";
+            lblFuerzaActual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblY1Actual
+            // 
+            lblY1Actual.AutoSize = true;
+            lblY1Actual.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblY1Actual.Location = new System.Drawing.Point(4, 40);
+            lblY1Actual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblY1Actual.Name = "lblY1Actual";
+            lblY1Actual.Size = new System.Drawing.Size(349, 40);
+            lblY1Actual.TabIndex = 2;
+            lblY1Actual.Text = "y1 = --";
+            lblY1Actual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblY2Actual
+            // 
+            lblY2Actual.AutoSize = true;
+            lblY2Actual.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblY2Actual.Location = new System.Drawing.Point(361, 40);
+            lblY2Actual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblY2Actual.Name = "lblY2Actual";
+            lblY2Actual.Size = new System.Drawing.Size(350, 40);
+            lblY2Actual.TabIndex = 3;
+            lblY2Actual.Text = "y2 = --";
+            lblY2Actual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblY3Actual
+            // 
+            lblY3Actual.AutoSize = true;
+            lblY3Actual.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblY3Actual.Location = new System.Drawing.Point(4, 80);
+            lblY3Actual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblY3Actual.Name = "lblY3Actual";
+            lblY3Actual.Size = new System.Drawing.Size(349, 40);
+            lblY3Actual.TabIndex = 4;
+            lblY3Actual.Text = "y3 = --";
+            lblY3Actual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAvisoEscala
+            // 
+            lblAvisoEscala.AutoSize = true;
+            lblAvisoEscala.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblAvisoEscala.ForeColor = System.Drawing.Color.FromArgb(192, 0, 0);
+            lblAvisoEscala.Location = new System.Drawing.Point(361, 80);
+            lblAvisoEscala.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblAvisoEscala.Name = "lblAvisoEscala";
+            lblAvisoEscala.Size = new System.Drawing.Size(350, 40);
+            lblAvisoEscala.TabIndex = 5;
+            lblAvisoEscala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // gbMuestras
-            //
-            this.gbMuestras.Controls.Add(this.dgvMuestras);
-            this.gbMuestras.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbMuestras.Location = new System.Drawing.Point(3, 473);
-            this.gbMuestras.Name = "gbMuestras";
-            this.gbMuestras.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.gbMuestras.Size = new System.Drawing.Size(514, 382);
-            this.gbMuestras.TabIndex = 2;
-            this.gbMuestras.TabStop = false;
-            this.gbMuestras.Text = "Muestras calculadas";
-            //
+            // 
+            gbMuestras.Controls.Add(dgvMuestras);
+            gbMuestras.Dock = System.Windows.Forms.DockStyle.Fill;
+            gbMuestras.Location = new System.Drawing.Point(4, 788);
+            gbMuestras.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbMuestras.Name = "gbMuestras";
+            gbMuestras.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbMuestras.Size = new System.Drawing.Size(731, 632);
+            gbMuestras.TabIndex = 2;
+            gbMuestras.TabStop = false;
+            gbMuestras.Text = "Muestras calculadas";
+            // 
             // dgvMuestras
-            //
-            this.dgvMuestras.AllowUserToAddRows = false;
-            this.dgvMuestras.AllowUserToDeleteRows = false;
-            this.dgvMuestras.AllowUserToResizeRows = false;
-            this.dgvMuestras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMuestras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMuestras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIndice,
-            this.colTiempo,
-            this.colFuerza,
-            this.colY1,
-            this.colY2,
-            this.colY3});
-            this.dgvMuestras.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMuestras.Location = new System.Drawing.Point(6, 17);
-            this.dgvMuestras.Name = "dgvMuestras";
-            this.dgvMuestras.ReadOnly = true;
-            this.dgvMuestras.RowHeadersVisible = false;
-            this.dgvMuestras.Size = new System.Drawing.Size(508, 358);
-            this.dgvMuestras.TabIndex = 0;
-            this.dgvMuestras.VirtualMode = true;
-            this.dgvMuestras.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvMuestras_CellValueNeeded);
-            this.dgvMuestras.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMuestras_CellClick);
-            //
-            // Columnas de la tabla de muestras
-            //
-            this.colIndice.HeaderText = "i";
-            this.colIndice.Name = "colIndice";
-            this.colIndice.ReadOnly = true;
-            this.colIndice.FillWeight = 40F;
-            this.colIndice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colIndice.DefaultCellStyle.Format = "0";
-            this.colTiempo.HeaderText = "t (s)";
-            this.colTiempo.Name = "colTiempo";
-            this.colTiempo.ReadOnly = true;
-            this.colTiempo.FillWeight = 70F;
-            this.colTiempo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colTiempo.DefaultCellStyle.Format = "F6";
-            this.colFuerza.HeaderText = "F(t) (N)";
-            this.colFuerza.Name = "colFuerza";
-            this.colFuerza.ReadOnly = true;
-            this.colFuerza.FillWeight = 70F;
-            this.colFuerza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colFuerza.DefaultCellStyle.Format = "G6";
-            this.colY1.HeaderText = "y1 (m)";
-            this.colY1.Name = "colY1";
-            this.colY1.ReadOnly = true;
-            this.colY1.FillWeight = 70F;
-            this.colY1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colY1.DefaultCellStyle.Format = "G6";
-            this.colY2.HeaderText = "y2 (m)";
-            this.colY2.Name = "colY2";
-            this.colY2.ReadOnly = true;
-            this.colY2.FillWeight = 70F;
-            this.colY2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colY2.DefaultCellStyle.Format = "G6";
-            this.colY3.HeaderText = "y3 (m)";
-            this.colY3.Name = "colY3";
-            this.colY3.ReadOnly = true;
-            this.colY3.FillWeight = 70F;
-            this.colY3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colY3.DefaultCellStyle.Format = "G6";
-            //
+            // 
+            dgvMuestras.AllowUserToAddRows = false;
+            dgvMuestras.AllowUserToDeleteRows = false;
+            dgvMuestras.AllowUserToResizeRows = false;
+            dgvMuestras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMuestras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMuestras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { colIndice, colTiempo, colFuerza, colY1, colY2, colY3 });
+            dgvMuestras.Dock = System.Windows.Forms.DockStyle.Fill;
+            dgvMuestras.Location = new System.Drawing.Point(4, 29);
+            dgvMuestras.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            dgvMuestras.Name = "dgvMuestras";
+            dgvMuestras.ReadOnly = true;
+            dgvMuestras.RowHeadersVisible = false;
+            dgvMuestras.RowHeadersWidth = 62;
+            dgvMuestras.Size = new System.Drawing.Size(723, 598);
+            dgvMuestras.TabIndex = 0;
+            dgvMuestras.VirtualMode = true;
+            dgvMuestras.CellClick += dgvMuestras_CellClick;
+            dgvMuestras.CellValueNeeded += dgvMuestras_CellValueNeeded;
+            // 
+            // colIndice
+            // 
+            dataGridViewCellStyle1.Format = "0";
+            colIndice.DefaultCellStyle = dataGridViewCellStyle1;
+            colIndice.FillWeight = 40F;
+            colIndice.HeaderText = "i";
+            colIndice.MinimumWidth = 8;
+            colIndice.Name = "colIndice";
+            colIndice.ReadOnly = true;
+            colIndice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colTiempo
+            // 
+            dataGridViewCellStyle2.Format = "F6";
+            colTiempo.DefaultCellStyle = dataGridViewCellStyle2;
+            colTiempo.FillWeight = 70F;
+            colTiempo.HeaderText = "t (s)";
+            colTiempo.MinimumWidth = 8;
+            colTiempo.Name = "colTiempo";
+            colTiempo.ReadOnly = true;
+            colTiempo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colFuerza
+            // 
+            dataGridViewCellStyle3.Format = "G6";
+            colFuerza.DefaultCellStyle = dataGridViewCellStyle3;
+            colFuerza.FillWeight = 70F;
+            colFuerza.HeaderText = "F(t) (N)";
+            colFuerza.MinimumWidth = 8;
+            colFuerza.Name = "colFuerza";
+            colFuerza.ReadOnly = true;
+            colFuerza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colY1
+            // 
+            dataGridViewCellStyle4.Format = "G6";
+            colY1.DefaultCellStyle = dataGridViewCellStyle4;
+            colY1.FillWeight = 70F;
+            colY1.HeaderText = "y1 (m)";
+            colY1.MinimumWidth = 8;
+            colY1.Name = "colY1";
+            colY1.ReadOnly = true;
+            colY1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colY2
+            // 
+            dataGridViewCellStyle5.Format = "G6";
+            colY2.DefaultCellStyle = dataGridViewCellStyle5;
+            colY2.FillWeight = 70F;
+            colY2.HeaderText = "y2 (m)";
+            colY2.MinimumWidth = 8;
+            colY2.Name = "colY2";
+            colY2.ReadOnly = true;
+            colY2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colY3
+            // 
+            dataGridViewCellStyle6.Format = "G6";
+            colY3.DefaultCellStyle = dataGridViewCellStyle6;
+            colY3.FillWeight = 70F;
+            colY3.HeaderText = "y3 (m)";
+            colY3.MinimumWidth = 8;
+            colY3.Name = "colY3";
+            colY3.ReadOnly = true;
+            colY3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // gbAnalisis
-            //
-            this.gbAnalisis.Controls.Add(this.dgvAnalisis);
-            this.gbAnalisis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbAnalisis.Location = new System.Drawing.Point(520, 473);
-            this.gbAnalisis.Name = "gbAnalisis";
-            this.gbAnalisis.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.gbAnalisis.Size = new System.Drawing.Size(514, 382);
-            this.gbAnalisis.TabIndex = 3;
-            this.gbAnalisis.TabStop = false;
-            this.gbAnalisis.Text = "Análisis de desplazamientos máximos";
-            //
+            // 
+            gbAnalisis.Controls.Add(dgvAnalisis);
+            gbAnalisis.Dock = System.Windows.Forms.DockStyle.Fill;
+            gbAnalisis.Location = new System.Drawing.Point(743, 788);
+            gbAnalisis.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbAnalisis.Name = "gbAnalisis";
+            gbAnalisis.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbAnalisis.Size = new System.Drawing.Size(731, 632);
+            gbAnalisis.TabIndex = 3;
+            gbAnalisis.TabStop = false;
+            gbAnalisis.Text = "Análisis de desplazamientos máximos";
+            // 
             // dgvAnalisis
-            //
-            this.dgvAnalisis.AllowUserToAddRows = false;
-            this.dgvAnalisis.AllowUserToDeleteRows = false;
-            this.dgvAnalisis.AllowUserToResizeRows = false;
-            this.dgvAnalisis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAnalisis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnalisis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMasa,
-            this.colMaximo,
-            this.colTiempoMaximo,
-            this.colMinimo,
-            this.colTiempoMinimo,
-            this.colMaximoAbsoluto,
-            this.colTiempoMaximoAbsoluto});
-            this.dgvAnalisis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAnalisis.Location = new System.Drawing.Point(6, 17);
-            this.dgvAnalisis.Name = "dgvAnalisis";
-            this.dgvAnalisis.ReadOnly = true;
-            this.dgvAnalisis.RowHeadersVisible = false;
-            this.dgvAnalisis.Size = new System.Drawing.Size(508, 358);
-            this.dgvAnalisis.TabIndex = 0;
-            //
-            // Columnas de la tabla de análisis
-            //
-            this.colMasa.HeaderText = "Masa";
-            this.colMasa.Name = "colMasa";
-            this.colMasa.ReadOnly = true;
-            this.colMasa.FillWeight = 50F;
-            this.colMasa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colMaximo.HeaderText = "Máximo (m)";
-            this.colMaximo.Name = "colMaximo";
-            this.colMaximo.ReadOnly = true;
-            this.colMaximo.FillWeight = 60F;
-            this.colMaximo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colMaximo.DefaultCellStyle.Format = "G6";
-            this.colTiempoMaximo.HeaderText = "t (s)";
-            this.colTiempoMaximo.Name = "colTiempoMaximo";
-            this.colTiempoMaximo.ReadOnly = true;
-            this.colTiempoMaximo.FillWeight = 45F;
-            this.colTiempoMaximo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colTiempoMaximo.DefaultCellStyle.Format = "F4";
-            this.colMinimo.HeaderText = "Mínimo (m)";
-            this.colMinimo.Name = "colMinimo";
-            this.colMinimo.ReadOnly = true;
-            this.colMinimo.FillWeight = 60F;
-            this.colMinimo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colMinimo.DefaultCellStyle.Format = "G6";
-            this.colTiempoMinimo.HeaderText = "t (s)";
-            this.colTiempoMinimo.Name = "colTiempoMinimo";
-            this.colTiempoMinimo.ReadOnly = true;
-            this.colTiempoMinimo.FillWeight = 45F;
-            this.colTiempoMinimo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colTiempoMinimo.DefaultCellStyle.Format = "F4";
-            this.colMaximoAbsoluto.HeaderText = "Máx. absoluto (m)";
-            this.colMaximoAbsoluto.Name = "colMaximoAbsoluto";
-            this.colMaximoAbsoluto.ReadOnly = true;
-            this.colMaximoAbsoluto.FillWeight = 70F;
-            this.colMaximoAbsoluto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colMaximoAbsoluto.DefaultCellStyle.Format = "G6";
-            this.colTiempoMaximoAbsoluto.HeaderText = "t (s)";
-            this.colTiempoMaximoAbsoluto.Name = "colTiempoMaximoAbsoluto";
-            this.colTiempoMaximoAbsoluto.ReadOnly = true;
-            this.colTiempoMaximoAbsoluto.FillWeight = 45F;
-            this.colTiempoMaximoAbsoluto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colTiempoMaximoAbsoluto.DefaultCellStyle.Format = "F4";
-            //
+            // 
+            dgvAnalisis.AllowUserToAddRows = false;
+            dgvAnalisis.AllowUserToDeleteRows = false;
+            dgvAnalisis.AllowUserToResizeRows = false;
+            dgvAnalisis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvAnalisis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAnalisis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { colMasa, colMaximo, colTiempoMaximo, colMinimo, colTiempoMinimo, colMaximoAbsoluto, colTiempoMaximoAbsoluto });
+            dgvAnalisis.Dock = System.Windows.Forms.DockStyle.Fill;
+            dgvAnalisis.Location = new System.Drawing.Point(4, 29);
+            dgvAnalisis.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            dgvAnalisis.Name = "dgvAnalisis";
+            dgvAnalisis.ReadOnly = true;
+            dgvAnalisis.RowHeadersVisible = false;
+            dgvAnalisis.RowHeadersWidth = 62;
+            dgvAnalisis.Size = new System.Drawing.Size(723, 598);
+            dgvAnalisis.TabIndex = 0;
+            // 
+            // colMasa
+            // 
+            colMasa.FillWeight = 50F;
+            colMasa.HeaderText = "Masa";
+            colMasa.MinimumWidth = 8;
+            colMasa.Name = "colMasa";
+            colMasa.ReadOnly = true;
+            colMasa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colMaximo
+            // 
+            dataGridViewCellStyle7.Format = "G6";
+            colMaximo.DefaultCellStyle = dataGridViewCellStyle7;
+            colMaximo.FillWeight = 60F;
+            colMaximo.HeaderText = "Máximo (m)";
+            colMaximo.MinimumWidth = 8;
+            colMaximo.Name = "colMaximo";
+            colMaximo.ReadOnly = true;
+            colMaximo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colTiempoMaximo
+            // 
+            dataGridViewCellStyle8.Format = "F4";
+            colTiempoMaximo.DefaultCellStyle = dataGridViewCellStyle8;
+            colTiempoMaximo.FillWeight = 45F;
+            colTiempoMaximo.HeaderText = "t (s)";
+            colTiempoMaximo.MinimumWidth = 8;
+            colTiempoMaximo.Name = "colTiempoMaximo";
+            colTiempoMaximo.ReadOnly = true;
+            colTiempoMaximo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colMinimo
+            // 
+            dataGridViewCellStyle9.Format = "G6";
+            colMinimo.DefaultCellStyle = dataGridViewCellStyle9;
+            colMinimo.FillWeight = 60F;
+            colMinimo.HeaderText = "Mínimo (m)";
+            colMinimo.MinimumWidth = 8;
+            colMinimo.Name = "colMinimo";
+            colMinimo.ReadOnly = true;
+            colMinimo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colTiempoMinimo
+            // 
+            dataGridViewCellStyle10.Format = "F4";
+            colTiempoMinimo.DefaultCellStyle = dataGridViewCellStyle10;
+            colTiempoMinimo.FillWeight = 45F;
+            colTiempoMinimo.HeaderText = "t (s)";
+            colTiempoMinimo.MinimumWidth = 8;
+            colTiempoMinimo.Name = "colTiempoMinimo";
+            colTiempoMinimo.ReadOnly = true;
+            colTiempoMinimo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colMaximoAbsoluto
+            // 
+            dataGridViewCellStyle11.Format = "G6";
+            colMaximoAbsoluto.DefaultCellStyle = dataGridViewCellStyle11;
+            colMaximoAbsoluto.FillWeight = 70F;
+            colMaximoAbsoluto.HeaderText = "Máx. absoluto (m)";
+            colMaximoAbsoluto.MinimumWidth = 8;
+            colMaximoAbsoluto.Name = "colMaximoAbsoluto";
+            colMaximoAbsoluto.ReadOnly = true;
+            colMaximoAbsoluto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colTiempoMaximoAbsoluto
+            // 
+            dataGridViewCellStyle12.Format = "F4";
+            colTiempoMaximoAbsoluto.DefaultCellStyle = dataGridViewCellStyle12;
+            colTiempoMaximoAbsoluto.FillWeight = 45F;
+            colTiempoMaximoAbsoluto.HeaderText = "t (s)";
+            colTiempoMaximoAbsoluto.MinimumWidth = 8;
+            colTiempoMaximoAbsoluto.Name = "colTiempoMaximoAbsoluto";
+            colTiempoMaximoAbsoluto.ReadOnly = true;
+            colTiempoMaximoAbsoluto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // timerAnimacion
-            //
-            this.timerAnimacion.Interval = 30;
-            this.timerAnimacion.Tick += new System.EventHandler(this.timerAnimacion_Tick);
-            //
+            // 
+            timerAnimacion.Interval = 30;
+            timerAnimacion.Tick += timerAnimacion_Tick;
+            // 
             // errorProvider
-            //
-            this.errorProvider.ContainerControl = this;
-            this.errorProvider.Icon = System.Drawing.SystemIcons.Error;
-            //
+            // 
+            errorProvider.ContainerControl = this;
+            errorProvider.Icon = (System.Drawing.Icon)resources.GetObject("errorProvider.Icon")!;
+            // 
             // Form1
-            //
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 861);
-            this.Controls.Add(this.tlRaiz);
-            this.MinimumSize = new System.Drawing.Size(1100, 700);
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Simulación de 3 masas, 4 resortes y 3 amortiguadores";
-            this.tlRaiz.ResumeLayout(false);
-            this.tlLateral.ResumeLayout(false);
-            this.gbParametros.ResumeLayout(false);
-            this.gbParametros.PerformLayout();
-            this.tlParametros.ResumeLayout(false);
-            this.tlParametros.PerformLayout();
-            this.gbAcciones.ResumeLayout(false);
-            this.tlAcciones.ResumeLayout(false);
-            this.flBotones.ResumeLayout(false);
-            this.tlContenido.ResumeLayout(false);
-            this.gbGrafica.ResumeLayout(false);
-            this.gbAnimacion.ResumeLayout(false);
-            this.tlAnimacion.ResumeLayout(false);
-            this.tlEstadoAnimacion.ResumeLayout(false);
-            this.tlEstadoAnimacion.PerformLayout();
-            this.gbMuestras.ResumeLayout(false);
-            this.dgvMuestras.ResumeLayout(false);
-            this.gbAnalisis.ResumeLayout(false);
-            this.dgvAnalisis.ResumeLayout(false);
-            this.ResumeLayout(false);
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(2000, 1435);
+            Controls.Add(tlRaiz);
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            MinimumSize = new System.Drawing.Size(1562, 1126);
+            Name = "Form1";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Simulación de 3 masas, 4 resortes y 3 amortiguadores";
+            tlRaiz.ResumeLayout(false);
+            tlLateral.ResumeLayout(false);
+            gbParametros.ResumeLayout(false);
+            panelParametros.ResumeLayout(false);
+            panelParametros.PerformLayout();
+            tlParametros.ResumeLayout(false);
+            tlParametros.PerformLayout();
+            gbAcciones.ResumeLayout(false);
+            tlAcciones.ResumeLayout(false);
+            flBotones.ResumeLayout(false);
+            flBotones.PerformLayout();
+            tlContenido.ResumeLayout(false);
+            gbGrafica.ResumeLayout(false);
+            gbAnimacion.ResumeLayout(false);
+            tlAnimacion.ResumeLayout(false);
+            tlEstadoAnimacion.ResumeLayout(false);
+            tlEstadoAnimacion.PerformLayout();
+            gbMuestras.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvMuestras).EndInit();
+            gbAnalisis.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvAnalisis).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            ResumeLayout(false);
 
         }
 
