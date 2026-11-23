@@ -34,6 +34,15 @@
       Se silencian los avisos de restore para que la compilación quede limpia.
     -->
     <NoWarn>$(NoWarn);NU1701</NoWarn>
+    <!--
+      CS8600 / CS8601: el diseñador de WinForms serializa el icono del ErrorProvider
+      como un recurso del .resx y lo recupera con un cast de object a System.Drawing.Icon,
+      que el compilador marca como posiblemente nulo. El archivo lo regenera el diseñador
+      en cada guardado, así que la única forma de silenciarlo sin que vuelva es a nivel
+      de proyecto. Se silencian sólo esos dos avisos: el resto del análisis de
+      nulabilidad (CS8602, CS8603, CS8618...) sigue activo.
+    -->
+    <NoWarn>$(NoWarn);CS8600;CS8601</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

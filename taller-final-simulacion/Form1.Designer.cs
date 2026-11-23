@@ -1479,7 +1479,7 @@ namespace taller_final_simulacion
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
-            errorProvider.Icon = (System.Drawing.Icon)resources.GetObject("errorProvider.Icon")!;
+            errorProvider.Icon = (System.Drawing.Icon)resources.GetObject("errorProvider.Icon");
             // 
             // Form1
             // 
