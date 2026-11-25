@@ -34,9 +34,9 @@ namespace taller_final_simulacion.Simulacion
     /// Se usa Runge-Kutta de 4.º orden (RK4) porque:
     ///   - es de orden global 4 para problemas no lineales: a igual esfuerzo computacional
     ///     entrega un error mucho menor que Euler o Verlet;
-    ///   - la función de derivatives es suave y Lipschitz en el tiempo (la fuerza es una
+    ///   - la función de derivadas es suave y Lipschitz en el tiempo (la fuerza es una
     ///     discontinuidad acotada, que afecta a la precisión local pero no a la estabilidad);
-    ///   - es effortless de implementar y mantiene el orden de las muestras sin
+    ///   - es fácil de implementar y mantiene el orden de las muestras sin
     ///     necesidad de resolver el sistema lineal M·ÿ + C·ẏ + K·y = f de forma explícita.
     ///
     /// Para robustez frente a sistemas rígidos (constantes elásticas elevadas), el paso
@@ -149,6 +149,22 @@ namespace taller_final_simulacion.Simulacion
         }
 
         /// <summary>
+        /// Lado de la discontinuidad de la fuerza en el que se encuentra un tramo integrado.
+        /// El pulso se evalúa con el valor por la izquierda en t = Tf mientras el tramo está
+        /// dentro del pulso, y con el valor por la derecha una vez superado: así la etapa del
+        /// RK4 que cae exactamente en la discontinuidad usa el valor que corresponde a su
+        /// propio tramo y no al del vecino.
+        /// </summary>
+        private enum LadoDelPulso
+        {
+            /// <summary>Tramo dentro del pulso: 0 <= t <= Tf.</summary>
+            Activo,
+
+            /// <summary>Tramo con el pulso ya retirado: t >= Tf.</summary>
+            Terminado,
+        }
+
+        /// <summary>
         /// Integración de un intervalo de tiempo, con división por evento en la
         /// discontinuidad de la fuerza (t = Tf).
         ///
@@ -173,24 +189,26 @@ namespace taller_final_simulacion.Simulacion
 
             if (tf > 0 && t < tf && t + h > tf)
             {
-                // Primera parte: el pulso sigue activo.
+                // Primera parte: el pulso sigue activo. Su extremo derecho cae en la
+                // discontinuidad, donde manda el valor por la izquierda.
                 double h1 = tf - t;
-                IntegrarPasoRK4(p, t, h1, true, estado, k1, k2, k3, k4, auxiliar);
+                IntegrarPasoRK4(p, t, h1, LadoDelPulso.Activo, estado, k1, k2, k3, k4, auxiliar);
                 t += h1;
                 h -= h1;
             }
 
-            // Segunda parte: el pulso ya terminó (o el intervalo entero está en una sola fase).
-            bool fuerzaActiva = t >= 0 && t < tf;
-            IntegrarPasoRK4(p, t, h, fuerzaActiva, estado, k1, k2, k3, k4, auxiliar);
+            // Segunda parte: el pulso ya terminó (o el intervalo entero está dentro del
+            // pulso). En t = Tf manda el valor por la derecha de la discontinuidad.
+            LadoDelPulso lado = t >= 0 && t < tf ? LadoDelPulso.Activo : LadoDelPulso.Terminado;
+            IntegrarPasoRK4(p, t, h, lado, estado, k1, k2, k3, k4, auxiliar);
 
             return t + h;
         }
 
         /// <summary>
-        /// Derivadas del vector de estado x = [y1, y2, y3, v1, v2, v3].
+        /// Derivadas del vector de estado x = [y1, y2, y3, v1, v2, v3] en el instante t.
         /// </summary>
-        private static void Derivadas(SystemParameters p, bool fuerzaActiva, double[] x, double[] dx)
+        private static void Derivadas(SystemParameters p, LadoDelPulso lado, double t, double[] x, double[] dx)
         {
             double y1 = x[0];
             double y2 = x[1];
@@ -198,7 +216,9 @@ namespace taller_final_simulacion.Simulacion
             double v1 = x[3];
             double v2 = x[4];
             double v3 = x[5];
-            double fuerza = fuerzaActiva ? p.ForceAmplitude : 0;
+
+            // La fuerza se evalúa en el instante de cada etapa, no una sola vez por paso.
+            double fuerza = FuerzaDeEtapa(p, lado, t);
 
             dx[0] = v1;
             dx[1] = v2;
@@ -209,13 +229,32 @@ namespace taller_final_simulacion.Simulacion
         }
 
         /// <summary>
+        /// Fuerza externa en el instante de una etapa del RK4.
+        /// Dentro del pulso manda la amplitud A; fuera del pulso, 0. El lado de la
+        /// discontinuidad decide qué valor corresponde al instante exacto t = Tf.
+        /// </summary>
+        private static double FuerzaDeEtapa(SystemParameters p, LadoDelPulso lado, double t)
+        {
+            if (lado == LadoDelPulso.Terminado)
+            {
+                // Fuera del pulso (o justo a su derecha, en la discontinuidad).
+                return 0;
+            }
+
+            // Dentro del pulso (o justo a su izquierda, en la discontinuidad).
+            return t >= 0 && t <= p.ForceDuration ? p.ForceAmplitude : 0;
+        }
+
+        /// <summary>
         /// Un paso de Runge-Kutta de 4.º orden (RK4 clásico).
+        /// Cada etapa evalúa las derivadas (y con ellas la fuerza) en su propio instante:
+        /// t, t + h/2, t + h/2 y t + h.
         /// </summary>
         private static void IntegrarPasoRK4(
             SystemParameters p,
             double t,
             double h,
-            bool fuerzaActiva,
+            LadoDelPulso lado,
             double[] x,
             double[] k1,
             double[] k2,
@@ -223,25 +262,25 @@ namespace taller_final_simulacion.Simulacion
             double[] k4,
             double[] auxiliar)
         {
-            Derivadas(p, fuerzaActiva, x, k1);
+            Derivadas(p, lado, t, x, k1);
 
             for (int i = 0; i < 6; i++)
             {
                 auxiliar[i] = x[i] + 0.5 * h * k1[i];
             }
-            Derivadas(p, fuerzaActiva, auxiliar, k2);
+            Derivadas(p, lado, t + 0.5 * h, auxiliar, k2);
 
             for (int i = 0; i < 6; i++)
             {
                 auxiliar[i] = x[i] + 0.5 * h * k2[i];
             }
-            Derivadas(p, fuerzaActiva, auxiliar, k3);
+            Derivadas(p, lado, t + 0.5 * h, auxiliar, k3);
 
             for (int i = 0; i < 6; i++)
             {
                 auxiliar[i] = x[i] + h * k3[i];
             }
-            Derivadas(p, fuerzaActiva, auxiliar, k4);
+            Derivadas(p, lado, t + h, auxiliar, k4);
 
             for (int i = 0; i < 6; i++)
             {
