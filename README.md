@@ -100,12 +100,16 @@ F(t) =  ⎨
 
 | Aspecto | Comportamiento |
 |---|---|
+| Integrador | Runge-Kutta de 4.º orden (RK4) de paso fijo, con `tᵢ = i · Δt` |
 | Paso entre muestras | `Δt = T / (N − 1)` |
 | Subpasos internos | El paso se divide para que el paso interno nunca supere **1 ms** (`subpasos = ⌈Δt / 1 ms⌉`), lo que mantiene la estabilidad con sistemas rígidos |
+| Fuerza en cada etapa | `F(t)` se evalúa **en el instante de cada etapa del RK4**: `t`, `t + h/2`, `t + h/2` y `t + h` |
 | División por evento | Si un paso cruza la discontinuidad en `t = Tf`, se parte en dos: el primer tramo con la fuerza activa y el segundo sin ella |
 | Divergencia | Se aborta con `SimulationException` si aparece un valor no finito o si `|y| > 10⁶ m` |
 
 **Por qué la división por evento.** Un RK4 clásico no puede integrar un paso que cruza una discontinuidad: el error local cae a orden `h` en lugar de orden `h⁴`, y el resultado deja de ser exacto. Partiendo el paso en `t = Tf` se conserva el orden esperado del método.
+
+**El pulso y la discontinuidad.** Cada tramo integrado queda íntegramente a un lado de `t = Tf`, así que la etapa que cae exactamente en la discontinuidad usa el valor que corresponde a su propio tramo: el del pulso por la izquierda (`t ≤ Tf`) y el de fuera del pulso por la derecha (`t ≥ Tf`). Con esa convención, evaluar `F(t)` en cada etapa da **exactamente los mismos resultados** que evaluar una sola vez por paso (verificado con una prueba de hash sobre 8 casos: pulso alineado y no alineado con `Δt`, sin pulso, pulso más largo que `T`, sistema rígido con pocos pasos y amplitud nula).
 
 ---
 
@@ -128,7 +132,7 @@ Todos los campos aceptan notación decimal con punto o coma (`12.5` y `12,5` son
 | `txtAmplitud` | `A` | N | `10` | `≥ 0` |
 | `txtDuracion` | `Tf` | s | `1` | `≥ 0` |
 | `txtTiempo` | `T` | s | `10` | `> 0` |
-| `txtMuestras` | `N` | — | `1000` | `2 ≤ N ≤ 200 000` |
+| `txtMuestras` | `N` | — | `1000` | entero, `2 ≤ N ≤ 200 000` |
 | `txtEscala` | `Escala` | px/m | `100` | `> 0` |
 
 `Restablecer` restaura este conjunto de valores.
@@ -201,20 +205,35 @@ taller-final-simulacion/
 
 ---
 
-## Alcance implementado
+## Criterios de aceptación
 
-- [x] Modelo de 3 GDL con 4 resortes y 3 amortiguadores, excitado por fuerza pulsada sobre `m3`.
-- [x] Integración numérica RK4 con subpasos y división por evento en `t = Tf`.
-- [x] Entrada de los 15 parámetros desde la interfaz, con validación de errores y avisos.
-- [x] Gráfica de `y1`, `y2`, `y3` con marcador de avance sincronizado con la animación.
-- [x] Animación del mecanismo en GDI+, con longitudes de resorte y amortiguador variables.
-- [x] Análisis de máximos (máximo, mínimo, máximo absoluto e instante) por masa y tabla de muestras.
+- [x] Los 10 parámetros físicos, amplitud/duración de F, tiempo, muestras y escala son editables.
+- [x] Validaciones impiden masas ≤ 0, datos inválidos y configuraciones inviables.
+- [x] Se puede simular repetidamente sin reiniciar la aplicación.
+- [x] ScottPlot muestra las tres curvas con leyenda, títulos, unidades y marcador de avance.
+- [x] La animación muestra soportes, 3 masas, 4 resortes y 3 amortiguadores con las conexiones correctas y variación visual de longitudes.
+- [x] La animación coincide con el instante marcado en ScottPlot.
+- [x] El factor de escala no altera los resultados físicos.
+- [x] Se muestran máximo positivo, mínimo, máximo absoluto e instante, para cada masa.
+- [x] El DataGridView lista todas las muestras con las columnas i, t, F(t), y₁, y₂, y₃.
+- [x] **Ningún control se crea desde código**: todo está en el diseñador.
+
+## Actividades implementadas
+
+| # | Actividad | Dónde está |
+|---|---|---|
+| 1 | Simulación numérica (RK4, subpasos, fuerza por etapa, validaciones, detección de NaN) | `Simulacion/Simulator.cs`, `Modelos/SystemParameters.cs`, `Form1.cs` |
+| 2 | Interfaz gráfica (panel de configuración, botones, todo en el diseñador) | `Form1.Designer.cs` |
+| 3 | Gráficas con ScottPlot (tres curvas, leyenda, título, unidades, marcador de avance) | `Form1.cs` (`ActualizarMarcadorGrafica`) |
+| 4 | Animación del sistema mecánico (GDI+, soportes, masas, resortes, amortiguadores, doble búfer) | `Controles/DibujadorMecanismo.cs`, `Controles/PanelDobleBuffer.cs` |
+| 5 | Análisis de desplazamientos máximos (máximo, mínimo, máximo absoluto e instante) | `Modelos/SimulationResult.cs` (`MassAnalysis`) |
+| 6 | Registro de datos (`DataGridView` en modo virtual con todas las muestras) | `Form1.Designer.cs`, `Form1.cs` (`dgvMuestras_CellValueNeeded`) |
 
 ---
 
 ## Limitaciones conocidas
 
 - La detección de divergencia se evalúa en los límites de muestra, no dentro de los subpasos internos.
-- El número de muestras se trunca a entero: un valor fraccionario se redondea en lugar de rechazarse.
 - La tabla de muestras no sigue al tiempo durante la reproducción; hay que hacer clic en la fila para navegar a un instante.
+- El índice de la animación se deriva del tiempo real transcurrido y no de un contador de eventos del `Timer`: es lo que evita que la reproducción se congele cuando el repintado de la tabla satura el bucle de mensajes. El instante mostrado sigue siendo un múltiplo exacto de `Δt`.
 - El repositorio no incluye un proyecto de tests automatizados: la verificación se hizo con bancos de prueba descartables durante el desarrollo.
