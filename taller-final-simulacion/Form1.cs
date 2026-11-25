@@ -567,7 +567,7 @@ namespace taller_final_simulacion
             double amplitud = LeerNumero(txtAmplitud, "amplitud", errores, camposConErrorDeFormato);
             double duracion = LeerNumero(txtDuracion, "duracion", errores, camposConErrorDeFormato);
             double tiempo = LeerNumero(txtTiempo, "tiempo", errores, camposConErrorDeFormato);
-            int muestras = (int)LeerNumero(txtMuestras, "muestras", errores, camposConErrorDeFormato);
+            int muestras = LeerCantidadDeMuestras(errores, camposConErrorDeFormato);
             double escala = LeerNumero(txtEscala, "escala", errores, camposConErrorDeFormato);
 
             parametros = new SystemParameters
@@ -607,6 +607,36 @@ namespace taller_final_simulacion
             }
 
             return errores.Count == 0;
+        }
+
+        /// <summary>
+        /// Lee el número de muestras, que debe ser un entero: la consigna exige un
+        /// número de muestras entero (N >= 2 con un máximo razonable), no un valor
+        /// fraccionario que luego se trunque.
+        /// </summary>
+        private int LeerCantidadDeMuestras(List<string> errores, HashSet<string> camposConErrorDeFormato)
+        {
+            string texto = txtMuestras.Text.Trim();
+
+            if (texto.Length == 0)
+            {
+                errores.Add("El campo «número de muestras» está vacío.");
+                errorProvider.SetError(txtMuestras, "Valor obligatorio: el campo está vacío.");
+                camposConErrorDeFormato.Add("muestras");
+                return 0;
+            }
+
+            if (!int.TryParse(texto, NumberStyles.Integer, CultureInfo.InvariantCulture, out int valor)
+                && !int.TryParse(texto, NumberStyles.Integer, CultureInfo.CurrentCulture, out valor))
+            {
+                errores.Add($"El campo «número de muestras» debe ser un número entero: «{texto}».");
+                errorProvider.SetError(txtMuestras, "Debe ser un número entero (por ejemplo 1000).");
+                camposConErrorDeFormato.Add("muestras");
+                return 0;
+            }
+
+            errorProvider.SetError(txtMuestras, string.Empty);
+            return valor;
         }
 
         /// <summary>Lee un campo numérico y registra el error si no es válido.</summary>
